@@ -164,16 +164,18 @@ data = [
 
 
 def shuffle(data):
+
     if shuffle == False:
         return data
 
     shuffled_data = []
     # shuffle each dict within each block
     for block in data:
-        shuffled_data.append(random.sample(block, k=len(block)))
+        shuffled_data.append(random.sample(block, k=len(block))) ##randomiza el orden de las tareas por bloque
 
     # shuffle each block
-    #random.shuffle(shuffled_data)
+    random.shuffle(shuffled_data)  ## randomiza orden de los bloques
+    
     return shuffled_data
 
 
