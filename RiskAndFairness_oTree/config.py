@@ -19,6 +19,8 @@ import pandas as pd
 
 # if you want to turn off shuffling, change this to False
 shuffle = True
+ # randomiza numero de tareas por bloque
+shuffle2 = True
 
 # this will be a list, each element of which is the paying round for a group.
 # With the default of 16 participants, there will be 8 groups, so chosen_rounds
@@ -39,8 +41,11 @@ data = [
 {'mode': 'sec_1bl_1ch', 'm': 	62.879	, 'p_x': 	1.515	},
 {'mode': 'sec_1bl_1ch', 'm': 	40.000	, 'p_x': 	0.600	},
 {'mode': 'sec_1bl_1ch', 'm': 	75.000	, 'p_x': 	2.000	},
-{'mode': 'sec_1bl_1ch', 'm': 	35.000	, 'p_x': 	0.400	},
-{'mode': 'sec_1bl_1ch', 'm': 	100.758	, 'p_x': 	3.030	},
+{'mode': 'sec_1bl_1ch', 'm': 	43.500	, 'p_x': 	0.700	},
+{'mode': 'sec_1bl_1ch', 'm': 	76.879	, 'p_x': 	1.515	},
+{'mode': 'sec_1bl_1ch', 'm': 	89.000	, 'p_x': 	0.600	},
+{'mode': 'sec_1bl_1ch', 'm': 	55.000	, 'p_x': 	2.000	},
+{'mode': 'sec_1bl_1ch', 'm': 	55.000	, 'p_x': 	2.000	},
     ],
     [
 {'mode': 'sec_2bl_1ch', 'm': 	50.000	, 'p_x': 	1.000	},
@@ -55,8 +60,13 @@ data = [
 {'mode': 'sec_2bl_1ch', 'm': 	75.000	, 'p_x': 	2.000	},
 {'mode': 'sec_2bl_1ch', 'm': 	35.000	, 'p_x': 	0.400	},
 {'mode': 'sec_2bl_1ch', 'm': 	100.758	, 'p_x': 	3.030	},
+{'mode': 'sec_2bl_1ch', 'm': 	73.000	, 'p_x': 	1.550	},
+{'mode': 'sec_2bl_1ch', 'm': 	31.000	, 'p_x': 	1.400	},
+{'mode': 'sec_2bl_1ch', 'm': 	101.758	, 'p_x': 	4.030	},
     ],
     [
+{'mode': 'det_giv', 'm': 37.7, 'p_x':0.41},
+{'mode': 'det_giv', 'm': 33.29, 'p_x':0.32},
 {'mode': 'det_giv', 'm': 51.32, 'p_x':1.05},
 {'mode': 'det_giv', 'm': 52.78, 'p_x':1.11},
 {'mode': 'det_giv', 'm': 58.33, 'p_x':1.33},
@@ -83,8 +93,11 @@ data = [
 {'mode': 'probability', 'a_x': 55.303, 'a_y': 5, 'b_x': 5, 'b_y': 38.2},
 {'mode': 'probability', 'a_x': 65, 'a_y': 5, 'b_x': 5, 'b_y': 35},
 {'mode': 'probability', 'a_x': 85.606, 'a_y': 5, 'b_x': 5, 'b_y': 31.6},
+{'mode': 'probability', 'a_x': 70, 'a_y': 5, 'b_x': 5, 'b_y': 35},
+{'mode': 'probability', 'a_x': 85.604, 'a_y': 5, 'b_x': 5, 'b_y': 31.6},
+{'mode': 'probability', 'a_x': 27, 'a_y': 5, 'b_x': 5, 'b_y': 47},
+{'mode': 'probability', 'a_x': 42, 'a_y': 5, 'b_x': 5, 'b_y': 47.68},
     ],
-
     #[
         #{'mode': 'sec_ownrisk'   , 'm': 20, 'p_x': 0.5},
         # {'mode': 'sec_ownrisk'   , 'm': 20, 'p_x': .333, 'prob_a': 30},
@@ -135,6 +148,17 @@ data = [
     #]
 ]
 
+#aleatorizar numero de tareas por bloque
+if shuffle2 == True:
+    
+    data2 = []
+    for block in data:
+        #elegir un numero random dentro del intervalo (1,nro_tasks_por_bloque)
+        rand = random.randint(1,len(block)) 
+        data2.append(random.sample(block,k=rand)) #colocar k=rand si desea aleatorizar el nro de tasks por bloque
+
+    data = data2 #setear la nueva data
+
 # data = [
 #     # [
 #     #    
@@ -162,7 +186,6 @@ data = [
 #     # ]
 # ]
 
-
 def shuffle(data):
 
     if shuffle == False:
@@ -174,7 +197,6 @@ def shuffle(data):
         shuffled_data.append(random.sample(block, k=len(block))) ##randomiza el orden de las tareas por bloque
 
     # shuffle each block
-    random.shuffle(shuffled_data)  ## randomiza orden de los bloques
     
     return shuffled_data
 
