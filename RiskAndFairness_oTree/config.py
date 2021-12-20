@@ -197,6 +197,7 @@ def shuffle(data):
         shuffled_data.append(random.sample(block, k=len(block))) ##randomiza el orden de las tareas por bloque
 
     # shuffle each block
+    random.shuffle(shuffled_data)  ## randomiza orden de los bloques
     
     return shuffled_data
 
