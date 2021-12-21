@@ -152,11 +152,17 @@ data = [
 if shuffle2 == True:
     
     data2 = []
-    for block in data:
-        #elegir un numero random dentro del intervalo (1,nro_tasks_enel_bloque)
-        #rand = random.randint(1,len(block)) #habilitar cuando se desee aleatorizar el nro de tareas por bloque
-        #k=10/12/15 como se desee
-        data2.append(random.sample(block,k=12)) #colocar k=rand si desea aleatorizar el nro de tasks por bloque
+
+    #sin randomizar 
+    tasks_por_bloque = [10,12,10,15]
+    
+    #randomizando // habilitar cuando se desee aleatorizar el nro de tareas por bloque
+    #tasks_por_bloque_rand = [random.randint(1,len(block)) for block in data ] 
+    
+    #cambiar tasks_por_bloque por tasks_por_bloque_rand si se desea aleatorizar el nro de tareas por bloque
+    for block, tasks in zip(data,tasks_por_bloque):  
+     
+        data2.append(random.sample(block,k=tasks)) 
 
     data = data2 #setear la nueva data
 
