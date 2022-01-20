@@ -25,9 +25,9 @@
 	<table style="width:60%">
 		<tr>
             {% if role == 'Decider' %}
-			<th>Su decisión</th>
+			<th>Su elección</th>
             {% else %}
-            <th>Decisión del Decider</th>
+            <th>La elección del decisor</th>
             {% endif %}
 			<td>{{ dec_a | json}}% para A, {{ dec_b | json}}% para B</td>
 		</tr>
@@ -49,11 +49,11 @@
     <table style="width:60%">
         <tr>
             {% if role == 'Decider' %}
-            <th>Su decisión</th>
+            <th>Su elección</th>
             {% else %}
-            <th>La decisión del Decider</th>
+            <th>La elección del decisor</th>
             {% endif %}
-            <td>{{ dec_a | json }} tokens</td>
+            <td>{{ dec_a | json }} fichas</td>
         </tr>
         <tr>
             <th>Sus ganancias</th>
@@ -69,11 +69,11 @@
     <table style="width:60%">
         <tr>
             {% if role == 'Decider' or mode == 'S-OwnRisk' %}
-            <th>Su decisión</th>
+            <th>Su elección</th>
             {% else %}
-            <th>La decisión del Decider</th>
+            <th>La elección del decisor</th>
             {% endif %}
-            <td>{{ dec_a | json }} tokens si A, {{ dec_b | json }} tokens si B</td>
+            <td>{{ dec_a | json }} fichas si salió el Estado A, {{ dec_b | json }} fichas si salió el Estado B</td>
         </tr>
         <tr>
             <th>Resultados</th>

@@ -85,7 +85,7 @@ var vm = new Vue({
             this.tip.a.append('tspan')
             .attr('x', this.tip.a.attr('x'))
             .attr('dx', this.equation.a.x > 50 ? '-150px': '0px')
-            .text('Resultado A: ' + this.prob.a.toFixed(0) + '% posible')
+            .text('Estado A: ' + this.prob.a.toFixed(0) + '% posible')
             this.tip.a.append('tspan')
             .attr('x', this.tip.a.attr('x'))
             .attr('dy', '15px')
@@ -101,7 +101,7 @@ var vm = new Vue({
             this.tip.b.append('tspan')
             .attr('x', this.tip.b.attr('x'))
             .attr('dx', this.equation.b.x > 50 ? '-150px': '0px')
-            .text('Resultado B: ' + this.prob.b.toFixed(0) + '% posible')
+            .text('Estado B: ' + this.prob.b.toFixed(0) + '% posible')
             this.tip.b.append('tspan')
             .attr('x', this.tip.b.attr('x'))
             .attr('dy', '15px')
@@ -465,7 +465,7 @@ var vm = new Vue({
                             text = 'Tu compañero (A: ' + xValue.toFixed(self.precision) + ', B: ' + yValue.toFixed(self.precision) + ')'
                         }
                     }else if (self.mode === 'single_given') {
-                        text = 'Tu: ' + xValue.toFixed(self.precision) + ', Partner: ' + yValue.toFixed(self.precision)
+                        text = 'Tu: ' + xValue.toFixed(self.precision) + ', Tu compañero: ' + yValue.toFixed(self.precision)
                     }else if (self.mode === 'positive') {
                         text = 'Tu = Tu compañero (A: ' + xValue.toFixed(self.precision) + ', B: ' + yValue.toFixed(self.precision) + ')'
                     }

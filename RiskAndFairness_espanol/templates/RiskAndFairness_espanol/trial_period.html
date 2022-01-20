@@ -266,7 +266,7 @@
 
     </script>
 
-    <script src="{% static 'js/graph.js' %}"></script>
+    <script src="{% static 'js/graph_es.js' %}"></script>
 
 {% endblock %}
 
@@ -309,7 +309,7 @@
             <div class="row">
                 <div class="graph col-9"></div>
                 <div class="col-3" v-if="mode === 'probability'">
-                    <h5>Elige con el deslizante:</h5>
+                    <h5>Elige con el deslizador:</h5>
                     <div class="row" style="margin-top: 30px">
                         <range-slider
                         class="slider"
@@ -341,8 +341,8 @@
                             <thead>
                                 <tr>
                                     <td width="34%" style = "text-align: center;">Probabilidad del resultado</td>
-                                    <td width="33%" style = "text-align: center; color: blue"><b>Sus Tokens</b></td>
-                                    <td width="33%" style = "text-align: center; color: orange"><b>Tokens de su compañero</b></td>
+                                    <td width="33%" style = "text-align: center; color: blue"><b>Sus fichas</b></td>
+                                    <td width="33%" style = "text-align: center; color: orange"><b>Fichas de su compañero</b></td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -385,8 +385,8 @@
                         <table class="table table-bordered table-sm small">
                             <thead>
                                 <tr>
-                                    <td width="50%" style="color: blue; text-align: center;"><b>Sus Tokens</b></td>
-                                    <td width="50%" v-if="mode !== 'single'" style="color: orange; text-align: center;"><b>Tokens de su compañero</b></td>
+                                    <td width="50%" style="color: blue; text-align: center;"><b>Sus fichas</b></td>
+                                    <td width="50%" v-if="mode !== 'single'" style="color: orange; text-align: center;"><b>Fichas de su compañero</b></td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -422,8 +422,8 @@
                             <thead>
                                 <tr>
                                     <td width="34%" style = "text-align: center;">Estado: Probabilidad</td>
-                                    <td width="33%" style = "text-align: center; color: blue"><b>Sus Tokens</b></td>
-                                    <td width="33%" style = "text-align: center; color: orange" v-if="mode !== 'single'"><b>Tokens de su compañero</b></td>
+                                    <td width="33%" style = "text-align: center; color: blue"><b>Sus fichas</b></td>
+                                    <td width="33%" style = "text-align: center; color: orange" v-if="mode !== 'single'"><b>Fichas de su compañero</b></td>
                                 </tr>
                             </thead>
                             <tbody>
