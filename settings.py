@@ -172,19 +172,13 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'real_world_currency_per_point': 0.33,
         'participation_fee': 5.00,
-        'app_sequence': ['RiskAndFairness_oTree','demograp']
+        'app_sequence': ['RiskAndFairness_oTree','demograp_es']
     },
     {
         'name': 'demograp_es',
-        'display_name': 'Questions_es',
-        'num_demo_participants': 1,
-        'app_sequence': ['demograp_es']
-    },
-    {
-        'name': 'demograp',
         'display_name': 'Questions',
         'num_demo_participants': 1,
-        'app_sequence': ['demograp']
+        'app_sequence': ['demograp_es']
     },
 ]
 
