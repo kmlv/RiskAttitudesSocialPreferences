@@ -65,7 +65,7 @@ USE_POINTS = True #False #True
 
 # e.g. en, de, fr, it, ja, zh-hans
 # see: https://docs.djangoproject.com/en/1.9/topics/i18n/#term-language-code
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'es'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
 INSTALLED_APPS = ['otree']
@@ -173,6 +173,12 @@ SESSION_CONFIGS = [
         'real_world_currency_per_point': 0.33,
         'participation_fee': 5.00,
         'app_sequence': ['RiskAndFairness_oTree','demograp']
+    },
+    {
+        'name': 'demograp_es',
+        'display_name': 'Questions_es',
+        'num_demo_participants': 1,
+        'app_sequence': ['demograp_es']
     },
     {
         'name': 'demograp',

@@ -3,7 +3,7 @@
 {% load otree  i18n %}
 
 {% block title %}
-    Anonymous Survey
+    {% blocktrans trimmed %}Anonymous Survey{% endblocktrans %}
 {% endblock %}
 
 {% block scripts %}
@@ -19,7 +19,7 @@
     <input type="hidden" name="time_Demographics" id="arrive_time">
 
     <p>
-        Please answer the following questions.
+        {% blocktrans %}Please answer the following questions.{% endblocktrans %}
     </p>
    
 
