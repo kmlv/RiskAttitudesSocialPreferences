@@ -18,8 +18,13 @@
 
     <input type="hidden" name="time_Results" id="arrive_time"/>
 
-    <h5>Su rol para el experimento fue {{ role | json }}.</h5>
-    <h5>La ronda que se pagará fue la tarea {{ mode_num }} - Decisión {{ counter }}.
+    {% if role == 'Decider' %}
+        <h5>Su rol para el experimento fue "Decisor".</h5>
+    {% else %}
+        <h5>Su rol para el experimento fue "No decisor".</h5>
+    {% endif %}
+    
+    <h5>La ronda que se pagará fue la Tarea {{ mode_num }} - Decisión {{ counter }}.
     <hr>
     {% if mode == 'PR' %}
 	<table style="width:60%">

@@ -73,7 +73,7 @@
             }
             else
             {
-                qc.innerHTML = "Suponga que ha elegido lo que se muestra en la imagen de arriba, y el estado A sucede."
+                qc.innerHTML = "Suponga que ha elegido lo que se muestra en la imagen de arriba, y el Estado A sucede."
                 q1.innerHTML = "¿Cuál es su pago?"
                 q2.innerHTML = "¿Cuál es el pago de su compañero?"
             }
@@ -187,26 +187,26 @@
 
     <div>
         <h4>
-            Debe responder correctamente antes de proceder a la tarea de pago.
+            Debe responder correctamente antes de proceder a la tarea de pago. Aproxime su respuesta a 0 decimales.
         </h4>
     </div>
     <div>
         {% if mode == 'probability' %}
-            <img src="{% static 'probability.png' %}" width="700">   
+            <img src="{% static 'RiskAndFairness_espanol/probability.png' %}" width="700">   
         {% elif mode == 'sec_1bl_1ch' %}
-            <img src="{% static 'sec_1bl_1ch.png' %}" width="700">
+            <img src="{% static 'RiskAndFairness_espanol/sec_1bl_1ch.png' %}" width="700">
         {% elif mode == 'sec_2bl_1ch' %}
-            <img src="{% static 'sec_2bl_1ch.png' %}" width="700">
+            <img src="{% static 'RiskAndFairness_espanol/sec_2bl_1ch.png' %}" width="700">
         {% elif mode == 'sec_1bl_2ch' %}
-            <img src="{% static 'sec_1bl_2ch.png' %}" width="700">
+            <img src="{% static 'RiskAndFairness_espanol/sec_1bl_2ch.png' %}" width="700">
         {% elif mode == 'sec_ownrisk' %}
-            <img src="{% static 'sec_ownrisk.png' %}" width="700">
+            <img src="{% static 'RiskAndFairness_espanol/sec_ownrisk.png' %}" width="700">
         {% elif mode == 'sec_ownrisk_fixedother' %}
-            <img src="{% static 'sec_ownrisk_fixedother.png' %}" width="700">
+            <img src="{% static 'RiskAndFairness_espanol/sec_ownrisk_fixedother.png' %}" width="700">
         {% elif mode == 'sec_otherrisk_ownfixed' %}
-            <img src="{% static 'sec_otherrisk_ownfixed.png' %}" width="700">
+            <img src="{% static 'RiskAndFairness_espanol/sec_otherrisk_ownfixed.png' %}" width="700">
         {% elif mode == 'det_giv' %}
-            <img src="{% static 'det_giv.png' %}" width="700">
+            <img src="{% static 'RiskAndFairness_espanol/det_giv.PNG' %}" width="700">
         {% endif %}
     </div>
     <hr>
