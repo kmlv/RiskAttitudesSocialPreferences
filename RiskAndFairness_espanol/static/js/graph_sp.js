@@ -85,33 +85,33 @@ var vm = new Vue({
             this.tip.a.append('tspan')
             .attr('x', this.tip.a.attr('x'))
             .attr('dx', this.equation.a.x > 50 ? '-150px': '0px')
-            .text('Outcome A: ' + this.prob.a.toFixed(0) + '% chance')
+            .text('Estado A: ' + this.prob.a.toFixed(0) + '% posible')
             this.tip.a.append('tspan')
             .attr('x', this.tip.a.attr('x'))
             .attr('dy', '15px')
             .attr('dx', this.equation.a.x > 50 ? '-150px': '0px')
-            .text('You: ' + this.equation.a.x)
+            .text('Tú: ' + this.equation.a.x)
             this.tip.a.append('tspan')
             .attr('x', this.tip.a.attr('x'))
             .attr('dy', '15px')
             .attr('dx', this.equation.a.x > 50 ? '-150px': '0px')
-            .text('Partner: ' + this.equation.a.y)
+            .text('Pareja: ' + this.equation.a.y)
 
             this.tip.b.text(null)
             this.tip.b.append('tspan')
             .attr('x', this.tip.b.attr('x'))
             .attr('dx', this.equation.b.x > 50 ? '-150px': '0px')
-            .text('Outcome B: ' + this.prob.b.toFixed(0) + '% chance')
+            .text('Estado B: ' + this.prob.b.toFixed(0) + '% posible')
             this.tip.b.append('tspan')
             .attr('x', this.tip.b.attr('x'))
             .attr('dy', '15px')
             .attr('dx', this.equation.b.x > 50 ? '-150px': '0px')
-            .text('You: ' + this.equation.b.x)
+            .text('Tú: ' + this.equation.b.x)
             this.tip.b.append('tspan')
             .attr('x', this.tip.b.attr('x'))
             .attr('dy', '15px')
             .attr('dx', this.equation.b.x > 50 ? '-150px': '0px')
-            .text('Partner: ' + this.equation.b.y)
+            .text('Pareja: ' + this.equation.b.y)
         }
     },
     methods: {
@@ -417,14 +417,14 @@ var vm = new Vue({
 
                     if (['independent', 'single', 'negative', 'single_fixedsquare', 'single_fixedcircle'].indexOf(self.mode) !== -1) {
                         if (index === 0) {
-                            text = 'You (A: ' + self.selected[index].x + ', B: ' + self.selected[index].y + ')'
+                            text = 'Tú (A: ' + self.selected[index].x + ', B: ' + self.selected[index].y + ')'
                         }else{
-                            text = 'Partner (A: ' + self.selected[index].x + ', B: ' + self.selected[index].y + ')'
+                            text = 'Pareja (A: ' + self.selected[index].x + ', B: ' + self.selected[index].y + ')'
                         }
                     }else if (self.mode === 'single_given') {
-                        text = 'You: ' + self.selected[index].x + ', Partner: ' + self.selected[index].y
+                        text = 'Tú: ' + self.selected[index].x + ', Pareja: ' + self.selected[index].y
                     }else if (self.mode === 'positive') {
-                        text = 'You = Partner (A: ' + self.selected[index].x + ', B: ' + self.selected[index].y + ')'
+                        text = 'Tú = Pareja (A: ' + self.selected[index].x + ', B: ' + self.selected[index].y + ')'
                     }
 
                     self.tip[index] = this.graph.svg
@@ -460,14 +460,14 @@ var vm = new Vue({
 
                     if (['independent', 'single', 'negative', 'single_fixedsquare', 'single_fixedcircle'].indexOf(self.mode) !== -1) {
                         if (index == 0) {
-                            text = 'You (A: ' + xValue.toFixed(self.precision) + ', B: ' + yValue.toFixed(self.precision) + ')'
+                            text = 'Tú (A: ' + xValue.toFixed(self.precision) + ', B: ' + yValue.toFixed(self.precision) + ')'
                         }else{
-                            text = 'Partner (A: ' + xValue.toFixed(self.precision) + ', B: ' + yValue.toFixed(self.precision) + ')'
+                            text = 'Pareja (A: ' + xValue.toFixed(self.precision) + ', B: ' + yValue.toFixed(self.precision) + ')'
                         }
                     }else if (self.mode === 'single_given') {
-                        text = 'You: ' + xValue.toFixed(self.precision) + ', Partner: ' + yValue.toFixed(self.precision)
+                        text = 'Tu: ' + xValue.toFixed(self.precision) + ', Pareja: ' + yValue.toFixed(self.precision)
                     }else if (self.mode === 'positive') {
-                        text = 'You = Partner (A: ' + xValue.toFixed(self.precision) + ', B: ' + yValue.toFixed(self.precision) + ')'
+                        text = 'Tu = Pareja (A: ' + xValue.toFixed(self.precision) + ', B: ' + yValue.toFixed(self.precision) + ')'
                     }
 
                     if (self.tip && self.tip[index]) {
@@ -509,9 +509,9 @@ var vm = new Vue({
                             var otherText = ''
 
                             if (otherIndex == 0) {
-                                otherText = 'You (A: ' + otherXValue.toFixed(self.precision) + ', B: ' + otherYValue.toFixed(self.precision) + ')'
+                                otherText = 'Tú (A: ' + otherXValue.toFixed(self.precision) + ', B: ' + otherYValue.toFixed(self.precision) + ')'
                             }else{
-                                otherText = 'Partner (A: ' + otherXValue.toFixed(self.precision) + ', B: ' + otherYValue.toFixed(self.precision) + ')'
+                                otherText = 'Pareja (A: ' + otherXValue.toFixed(self.precision) + ', B: ' + otherYValue.toFixed(self.precision) + ')'
                             }
 
                             if (self.tip && self.tip[otherIndex]) {
@@ -543,7 +543,7 @@ var vm = new Vue({
                             var otherText = ''
 
                             if (otherIndex == 0) {
-                                otherText = 'You = Partner (A: ' + xValue.toFixed(self.precision) + ', B: ' + yValue.toFixed(self.precision) + ')'
+                                otherText = 'Tú = Pareja (A: ' + xValue.toFixed(self.precision) + ', B: ' + yValue.toFixed(self.precision) + ')'
                             }
 
                             if (self.tip && self.tip[otherIndex]) {
