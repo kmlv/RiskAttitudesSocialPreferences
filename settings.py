@@ -65,7 +65,7 @@ USE_POINTS = True #False #True
 
 # e.g. en, de, fr, it, ja, zh-hans
 # see: https://docs.djangoproject.com/en/1.9/topics/i18n/#term-language-code
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'es'
 
 # if an app is included in SESSION_CONFIGS, you don't need to list it here
 INSTALLED_APPS = ['otree']
@@ -172,21 +172,22 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'real_world_currency_per_point': 0.33,
         'participation_fee': 5.00,
-        'app_sequence': ['RiskAndFairness_oTree','demograp']
+        'app_sequence': ['RiskAndFairness_oTree','demograp_es']
     },
     {
+        'name': 'demograp_es',
         'name': 'RiskAndFairness_espanol',
         'display_name': 'Risk Preferences espanol',
         'num_demo_participants': 2,
         'real_world_currency_per_point': 0.33,
         'participation_fee': 5.00,
-        'app_sequence': ['RiskAndFairness_espanol','demograp']
+        'app_sequence': ['RiskAndFairness_espanol','demograp_es']
     },
     {
         'name': 'demograp',
         'display_name': 'Questions',
         'num_demo_participants': 1,
-        'app_sequence': ['demograp']
+        'app_sequence': ['demograp_es']
     },
 ]
 
@@ -196,4 +197,4 @@ SENTRY_DSN = 'http://cef5e70f5ff14cfeaefc70c9a320102d:710fd43a8a6e4cecb32c365a1d
 # anything you put after the below line will override
 # oTree's default settings. Use with caution.
 otree.settings.augment_settings(globals())
-DEBUG = True
+DEBUG = False

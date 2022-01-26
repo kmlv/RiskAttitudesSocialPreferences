@@ -1,8 +1,9 @@
 {% extends "global/Base.html" %}
 {% load staticfiles otree_tags %}
+{% load otree  i18n %}
 
 {% block title %}
-    Anonymous Survey
+    {% blocktrans trimmed %}Anonymous Survey{% endblocktrans %}
 {% endblock %}
 
 {% block scripts %}
@@ -17,11 +18,10 @@
 {% block content %}
     <input type="hidden" name="time_Demographics" id="arrive_time">
 
-
     <p>
-        Please answer the following questions.
+        {% blocktrans %}Please answer the following questions.{% endblocktrans %}
     </p>
-
+   
 
     {% formfield player.q_number %}
     <br/>
