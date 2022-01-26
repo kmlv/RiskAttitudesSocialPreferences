@@ -1,7 +1,7 @@
 # RiskAttitudesSocialPreferences
 Disentangling Risk Attitudes Social Preferences
 
-Para correr el proyecto, luego de instalar los requirements.txt y antes de correr otree devserver, se debe correr el siguiente comando: 
+To run the experiment, after installing the requirements.txt and before running the command otree devserver, you must run this command: 
 ```
 otree collectstatic
 ```
