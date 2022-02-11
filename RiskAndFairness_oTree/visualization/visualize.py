@@ -127,16 +127,12 @@ def plot_data(csv, player_id, data, mode, display='color', show=False):
                     line = probs[row['prob_a']]
                     dot = line
                 ax.plot([row['m'] / row['px'], 0], [0, row['m'] / row['py']], color=line, alpha=0.55, zorder=3, linewidth=.5)
-                
                 if mode == 'sec_2bl_1ch':
                     ax.plot([0, row['m'] / row['py']], [row['m'] / row['px'], 0], color=line, alpha=0.55, zorder=3, linewidth=.5)
-                
                 if mode != 'sec_otherrisk_ownfixed':
                     ax.scatter(row['me_a'], row['me_b'], color=dot, alpha=.6, zorder=4)
-                
                 if mode in ['sec_1bl_1ch', 'sec_1bl_2ch', 'sec_2bl_1ch', 'sec_otherrisk_ownfixed']:
                     ax.scatter(row['partner_a'], row['partner_b'], color=dot, marker='s', alpha=.6, zorder=4)
-
         if show == True:
             plt.show()
         else:
