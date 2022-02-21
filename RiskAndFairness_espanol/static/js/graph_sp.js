@@ -58,7 +58,7 @@ var vm = new Vue({
   // computes graph dimensions based on size of browser
   computed: {
     dimension: function () {
-      //console.log(this.width - this.margin.left - this.margin.right)
+      //console.log(this.width - this.margin.left - this.margin.right);
       //console.log(this.height - this.margin.top - this.margin.bottom)
       return {
         width: this.width - this.margin.left - this.margin.right,
@@ -218,6 +218,15 @@ var vm = new Vue({
           });
           break;
         case "independent":
+        //nuevo caso añadido
+        case "newone":
+          this.equations.push(this.equation);
+          this.equations.push({
+            m: this.equations[0].m2,
+            py: this.equations[0].px2,
+            px: this.equations[0].py2,
+          });
+          break;
         case "positive":
           this.equations.push(this.equation);
           this.equations.push({
@@ -226,15 +235,17 @@ var vm = new Vue({
             px: this.equations[0].px,
           });
           break;
-        case "negative": {
+        //this create the second curve
+        case "negative":
+          //this is the first equation
           this.equations.push(this.equation);
+          //this change the second equation in this case is the inverse
           this.equations.push({
             m: this.equations[0].m,
             py: this.equations[0].px,
             px: this.equations[0].py,
           });
           break;
-        }
         default:
           break;
       }
@@ -548,6 +559,7 @@ var vm = new Vue({
               "negative",
               "single_fixedsquare",
               "single_fixedcircle",
+              "newone",
             ].indexOf(self.mode) !== -1
           ) {
             if (index === 0) {
@@ -619,6 +631,7 @@ var vm = new Vue({
               "negative",
               "single_fixedsquare",
               "single_fixedcircle",
+              "newone",
             ].indexOf(self.mode) !== -1
           ) {
             if (index == 0) {
@@ -661,64 +674,48 @@ var vm = new Vue({
           if (self.mode !== "probability") {
             var otherIndex = 1 - index;
             switch (self.mode) {
-              /*case "negative":
-                var other = d3.select('[line-index="' + otherIndex + '"]');
-                var otherXValue = self.fnInverse(otherIndex, xValue);
-                if (otherXValue > self.minMax[otherIndex].maxX)
-                  otherXValue = self.minMax[otherIndex].maxX;
-                if (otherXValue < self.minMax[otherIndex].minX)
-                  otherXValue = self.minMax[otherIndex].minX;
-                var otherX = self.graph.x(otherXValue);
+              /*case 'negative':
+                            var other = d3.select('[line-index="' + otherIndex + '"]');
+                            var otherXValue = self.fnInverse(otherIndex, xValue);
+                            if (otherXValue > self.minMax[otherIndex].maxX) otherXValue = self.minMax[otherIndex].maxX;
+                            if (otherXValue < self.minMax[otherIndex].minX) otherXValue = self.minMax[otherIndex].minX;
+                            var otherX = self.graph.x(otherXValue);
 
-                var otherYValue = xValue;
-                var otherY = self.graph.y(otherYValue);
-                if (otherY < 0) otherY = 0;
+                            var otherYValue = xValue
+                            var otherY = self.graph.y(otherYValue)
+                            if (otherY < 0) otherY = 0;
 
-                if (other.attr("cx")) {
-                  other.attr("cx", otherX - self.circleRadius);
-                  other.attr("cy", otherY - self.circleRadius);
-                  me.attr("x", x);
-                  me.attr("y", y);
-                } else {
-                  other.attr("x", otherX - self.circleRadius);
-                  other.attr("y", otherY - self.circleRadius);
-                  me.attr("cx", x);
-                  me.attr("cy", y);
-                }
+                            if (other.attr('cx')) {
+                                other.attr('cx', otherX)
+                                other.attr('cy', otherY)
+                                me.attr('x', x - self.circleRadius)
+                                me.attr('y', y - self.circleRadius)
+                            }else{
+                                other.attr('x', otherX - self.circleRadius)
+                                other.attr('y', otherY - self.circleRadius)
+                                me.attr('cx', x)
+                                me.attr('cy', y)
+                            }
 
-                self.selected[otherIndex].x = otherXValue.toFixed(
-                  self.precision
-                );
-                self.selected[otherIndex].y = otherYValue.toFixed(
-                  self.precision
-                );
+                            self.selected[otherIndex].x = otherXValue.toFixed(self.precision)
+                            self.selected[otherIndex].y = otherYValue.toFixed(self.precision)
 
-                var otherText = "";
+                            var otherText = ''
 
-                if (otherIndex == 0) {
-                  otherText =
-                    "Tú (A: " +
-                    otherXValue.toFixed(self.precision) +
-                    ", B: " +
-                    otherYValue.toFixed(self.precision) +
-                    ")";
-                } else {
-                  otherText =
-                    "Pareja (A: " +
-                    otherXValue.toFixed(self.precision) +
-                    ", B: " +
-                    otherYValue.toFixed(self.precision) +
-                    ")";
-                }
+                            if (otherIndex == 0) {
+                                otherText = 'Tú (A: ' + otherXValue.toFixed(self.precision) + ', B: ' + otherYValue.toFixed(self.precision) + ')'
+                            }else{
+                                otherText = 'Pareja (A: ' + otherXValue.toFixed(self.precision) + ', B: ' + otherYValue.toFixed(self.precision) + ')'
+                            }
 
-                if (self.tip && self.tip[otherIndex]) {
-                  self.tip[otherIndex]
-                    .attr("x", otherX + 15)
-                    .attr("y", otherY - 15)
-                    .text(otherText);
-                }
+                            if (self.tip && self.tip[otherIndex]) {
+                                self.tip[otherIndex]
+                                .attr('x', otherX + 15)
+                                .attr('y', otherY - 15)
+                                .text(otherText);
+                            }
 
-                break;*/
+                        break;*/
               case "positive":
                 var other = d3.select('[line-index="' + otherIndex + '"]');
 

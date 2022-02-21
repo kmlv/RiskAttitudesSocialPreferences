@@ -168,11 +168,11 @@ SESSION_CONFIGS = [
   #  },
   #   {
   #       'name': 'RiskAndFairness_oTree',
-  #       'display_name': 'Risk Preferences',
-  #       'num_demo_participants': 2,
+  #      'display_name': 'Risk Preferences',
+   #      'num_demo_participants': 2,
   #       'real_world_currency_per_point': 0.33,
-   #      'participation_fee': 5.00,
-   #      'app_sequence': ['RiskAndFairness_oTree','demograp_es']
+  #      'participation_fee': 5.00,
+ #        'app_sequence': ['RiskAndFairness_oTree','demograp_es']
   #   },
     {
         'name': 'demograp_es',

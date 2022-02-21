@@ -6,11 +6,11 @@
 <div class="instructions well well-lg">
 
 
-    {% if mode == 'sec_1bl_1ch' or mode == 'sec_1bl_2ch' or mode == 'sec_2bl_1ch' or mode == 'sec_2bl_2ch' or mode == 'sec_ownrisk' or mode == 'sec_ownrisk_fixedother' or mode == 'sec_otherrisk_ownfixed' %}
+    {% if mode == 'sec_1bl_1ch' or mode == 'sec_1bl_2ch' or mode == 'sec_2bl_1ch' or mode == 'sec_2bl_2ch' or mode == 'sec_ownrisk' or mode == 'sec_ownrisk_fixedother' or mode == 'sec_otherrisk_ownfixed' or mode == 'sec_new_graph' %}
 
         <h2 class="panel-sub-heading">
             {% if mode == 'sec_1bl_1ch'%}
-                Instrucciones - Tarea 2
+            Instrucciones - Tarea 2
             {% elif mode == 'sec_1bl_2ch'%}
             Instrucciones - Tarea 4
             {% elif mode == 'sec_2bl_1ch'%}
@@ -23,6 +23,8 @@
             Instrucciones - Tarea 6
             {% elif mode == 'sec_otherrisk_ownfixed' %}
             Instrucciones - Tarea 7
+            {% elif mode == 'sec_new_graph' %}
+            Instrucciones - Nuevo gráfico
             {% endif %}
         </h2>
 
@@ -107,6 +109,10 @@
             </p>
         {% elif mode == 'sec_otherrisk_ownfixed' %}
 
+        {% elif mode == 'sec_new_graph' %}
+        <p>
+            Ingrese las instrucciones de la tarea aquí
+        </p>
         {% endif %}
 
             <p>

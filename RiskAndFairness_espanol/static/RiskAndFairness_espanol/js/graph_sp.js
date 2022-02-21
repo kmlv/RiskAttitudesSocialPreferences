@@ -151,7 +151,7 @@ var vm = new Vue({
     plots: function () {
       if (this.mode === "probability") {
         var points = [];
-        points.push(this.equation.a);
+        points.push(this.equation.a);                               
         points.push(this.equation.b);
         this.graphData.push(points);
         return;
@@ -165,7 +165,7 @@ var vm = new Vue({
         this.graphData[index].push({
           x: this.fnInverse(index, 0),
           y: 0,
-        });
+         });
       }
     },
 
@@ -218,6 +218,17 @@ var vm = new Vue({
           });
           break;
         case "independent":
+        case "newone":
+          this.equations.push(this.equation);
+          this.equations.push({
+            m: this.equations[0].m,
+            py: this.equations[0].py,
+            px: this.equations[0].px,
+            m: this.equations[0].m2,
+            py: this.equations[0].py2,
+            px: this.equations[0].px2,
+          });
+          break;
         case "positive":
           this.equations.push(this.equation);
           this.equations.push({
@@ -393,7 +404,7 @@ var vm = new Vue({
                 y:
                   this.scale.type === "fixed"
                     ? this.scale.max
-                    : this.graph.maxY,
+                    : this.graph.maxY, 
               },
             ])
           );
@@ -547,6 +558,7 @@ var vm = new Vue({
               "negative",
               "single_fixedsquare",
               "single_fixedcircle",
+              "newone",
             ].indexOf(self.mode) !== -1
           ) {
             if (index === 0) {
@@ -618,6 +630,7 @@ var vm = new Vue({
               "negative",
               "single_fixedsquare",
               "single_fixedcircle",
+              "newone",
             ].indexOf(self.mode) !== -1
           ) {
             if (index == 0) {
