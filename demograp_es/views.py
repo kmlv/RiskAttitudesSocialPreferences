@@ -8,14 +8,12 @@ from .models import Constants
 
 class Demographics(Page):
     form_model = models.Player
-    form_fields = ['q_number', 'q_major','q_school_year','q_how','q_rule','q_country',
+    form_fields = ['q_number', 'q_major','q_how','q_rule',
                    'q_age',
                    'q_gender',
                    'q_income',
-                   'q_zipcode',
                    'q_opinion',
-                   'time_Demographics',
-                   'q_station'
+                   'time_Demographics'
                    ]
 
 

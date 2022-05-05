@@ -66,7 +66,7 @@ msgstr "¿Cúal es el número de estación de tu computadora? (mira el sticker b
 
 #: .\demograp_es\models.py:56
 msgid "What do you identify as?"
-msgstr "¿Cómo te identificas?"
+msgstr "¿Con qué género te identificas?"
 
 #: .\demograp_es\models.py:58
 msgid "What is the approximate annual income of your family?"
@@ -74,7 +74,7 @@ msgstr "¿Cúal es el ingreso anual aproximado de tu familia?"
 
 #: .\demograp_es\models.py:60
 msgid "less than $15,000"
-msgstr "menos de $15,000"
+msgstr "menos de 15,000 soles"
 
 #: .\demograp_es\models.py:66
 msgid "I rather not answer this question"
