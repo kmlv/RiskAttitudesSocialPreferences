@@ -92,17 +92,19 @@ DEMO_PAGE_INTRO_TEXT = """
 """
 
 ROOMS = [
-    {
-        'name': 'Econ_Lab',
-        'display_name': 'Econ_Lab_202',
-        'participant_label_file': '_rooms/RP.txt',
-        'use_secure_urls': True,
-    },
-    {
-        'name': 'live_demo',
-        'display_name': 'Room for live demo (no participant labels)',
-    },
+    dict(
+        name='econ101',
+        display_name='Econ 101 class',
+        participant_label_file='_rooms/econ101.txt',
+    ),
+    dict(
+        name='e2labup',
+        display_name='E2LabUP - Room para sesiones online',
+        participant_label_file='_rooms/e2labup-room.txt',
+    ),
+    dict(name='live_demo', display_name='Room for live demo (no participant labels)'),
 ]
+
 
 
 # from here on are qualifications requirements for workers
