@@ -177,13 +177,12 @@ SESSION_CONFIGS = [
         'app_sequence': ['RiskAndFairness_oTree','demograp_es']
     },
     {
-        'name': 'demograp_es',
         'name': 'RiskAndFairness_espanol',
-        'display_name': 'Risk Preferences espanol',
+        'display_name': 'Risk Preferences español',
         'num_demo_participants': 2,
         'real_world_currency_per_point': 0.2,
         'participation_fee': 5.00,
-        'app_sequence': ['RiskAndFairness_espanol','demograp_es']
+        'app_sequence': ['initial_page','RiskAndFairness_espanol','demograp_es','final']
     },
     {
         'name': 'demograp',
