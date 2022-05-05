@@ -34,18 +34,18 @@
             {% else %}
             <th>La elección del decisor</th>
             {% endif %}
-			<td>{{ dec_a | json}}% para A, {{ dec_b | json}}% para B</td>
+			<td>{{ dec_a | json}}% en el Estado A, {{ dec_b | json}}% en el Estado B</td>
 		</tr>
 		<tr>
 			<th>Resultados</th>
-			<td>{{ outcome | json }}</td>
+			<td>Estado {{ outcome | json }}</td>
 		</tr>
 		<tr>
 			<th>Sus ganancias</th>
 			<td>{{ payoff | json }} </td>
 		</tr>
         <tr>
-            <th>Las ganancias de su compañero</th>
+            <th>Las ganancias de su pareja</th>
             <td>{{ partner_payoff | json }}
         </tr>
     </table>
@@ -65,7 +65,7 @@
             <td>{{ payoff | json }} </td>
         </tr>
         <tr>
-            <th>Ganancias de su compañero</th>
+            <th>Ganancias de su pareja</th>
             <td>{{ partner_payoff | json }}
         </tr>
     </table>
@@ -78,18 +78,18 @@
             {% else %}
             <th>La elección del decisor</th>
             {% endif %}
-            <td>{{ dec_a | json }} fichas si salió el Estado A, {{ dec_b | json }} fichas si salió el Estado B</td>
+            <td>{{ dec_a | json }} fichas en el Estado A, {{ dec_b | json }} fichas en el Estado B</td>
         </tr>
         <tr>
             <th>Resultados</th>
-            <td>{{ outcome | json }}</td>
+            <td>Estado {{ outcome | json }}</td>
         </tr>
         <tr>
             <th>Sus ganancias</th>
             <td>{{ payoff | json }} </td>
         </tr>
         <tr>
-            <th>Ganancias de su compañero</th>
+            <th>Ganancias de su pareja</th>
             <td>{{ partner_payoff | json }}
         </tr>
     </table>

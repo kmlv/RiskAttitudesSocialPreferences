@@ -58,7 +58,7 @@ AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'Soles'
 #Need to use this for Risk and Fairness
 USE_POINTS = True #False #True
 
@@ -135,8 +135,8 @@ mturk_hit_settings = {
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 2.00,
-    'participation_fee': 10.00,
+    'real_world_currency_per_point': 0.2,
+    'participation_fee': 5.00,
     'doc': "",
     'mturk_hit_settings': mturk_hit_settings,
 }
@@ -170,7 +170,7 @@ SESSION_CONFIGS = [
         'name': 'RiskAndFairness_oTree',
         'display_name': 'Risk Preferences',
         'num_demo_participants': 2,
-        'real_world_currency_per_point': 0.33,
+        'real_world_currency_per_point': 0.2,
         'participation_fee': 5.00,
         'app_sequence': ['RiskAndFairness_oTree','demograp_es']
     },
@@ -179,7 +179,7 @@ SESSION_CONFIGS = [
         'name': 'RiskAndFairness_espanol',
         'display_name': 'Risk Preferences espanol',
         'num_demo_participants': 2,
-        'real_world_currency_per_point': 0.33,
+        'real_world_currency_per_point': 0.2,
         'participation_fee': 5.00,
         'app_sequence': ['RiskAndFairness_espanol','demograp_es']
     },
