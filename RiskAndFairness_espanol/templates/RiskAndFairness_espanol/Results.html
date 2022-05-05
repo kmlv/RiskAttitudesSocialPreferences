@@ -93,8 +93,10 @@
             <td>{{ partner_payoff | json }}
         </tr>
     </table>
-    {% endif %}
 
+    {% endif %}
+    <hr>
+    <br><br>
     Para proceder con tu pago, entra al enlace abajo. Este enlace te redirigirá a un formulario para brindar la información
     para que recibas tu pago.
     <br><br>
@@ -117,6 +119,5 @@
     <br>
     <img height=10% width=20% src="{% static 'logoup.png'%}"/>
     
-    <hr>
-    {% next_button %}
+    
 {% endblock %}
