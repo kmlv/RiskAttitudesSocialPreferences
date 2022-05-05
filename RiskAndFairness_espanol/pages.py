@@ -208,7 +208,7 @@ class Results(Page):
             counter = 1
         
         return {'mode': modeMap[mode], 'mode_num': modeNum[mode], 'dec_a': dec_a, 'dec_b': dec_b, 'role': role,
-                    'counter': counter, 'outcome': outcome, 'payoff': payoff, 'partner_payoff': partner_payoff}
+                    'counter': counter, 'outcome': outcome, 'payoff': payoff, 'partner_payoff': partner_payoff, 'participant_id':self.participant.label}
 
 
 page_sequence = [
