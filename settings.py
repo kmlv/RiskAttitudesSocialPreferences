@@ -182,7 +182,7 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'real_world_currency_per_point': 0.2,
         'participation_fee': 5.00,
-        'app_sequence': ['initial_page','RiskAndFairness_espanol']
+        'app_sequence': ['initial_page','RiskAndFairness_espanol','demograp_es','final']
     },
     {
         'name': 'demograp',
@@ -198,4 +198,4 @@ SENTRY_DSN = 'http://cef5e70f5ff14cfeaefc70c9a320102d:710fd43a8a6e4cecb32c365a1d
 # anything you put after the below line will override
 # oTree's default settings. Use with caution.
 otree.settings.augment_settings(globals())
-DEBUG = False
+DEBUG = True

@@ -116,6 +116,19 @@ class Task(Page):
         elif self.player.id_in_group == 1 and self.round_number == self.player.participant.vars['pr']:
             self.group.set_payoffs()
 
+class Questions(Page):
+    
+    form_model = 'player'
+    form_fields = ['q1','q2','q3']
+
+    def is_displayed(self):
+        mode = self.player.participant.vars['dynamic_values'][self.round_number - 1]['mode']
+        if self.round_number == Constants.num_rounds:
+            return mode == 'sec_ownrisk'
+        else:
+            nextmode = self.player.participant.vars['dynamic_values'][self.round_number]['mode']
+            return mode != nextmode and mode == 'sec_ownrisk'
+        
 class ResultsWaitPage(WaitPage):
 
     def is_displayed(self):
@@ -208,7 +221,7 @@ class Results(Page):
             counter = 1
         
         return {'mode': modeMap[mode], 'mode_num': modeNum[mode], 'dec_a': dec_a, 'dec_b': dec_b, 'role': role,
-                    'counter': counter, 'outcome': outcome, 'payoff': payoff, 'partner_payoff': partner_payoff, 'participant_id':self.participant.label}
+                    'counter': counter, 'outcome': outcome, 'payoff': payoff, 'partner_payoff': partner_payoff}
 
 
 page_sequence = [
@@ -216,6 +229,7 @@ page_sequence = [
     TaskInstructions,
     ControlQuestions,
     Task,
+    Questions,
     ResultsWaitPage,
     Results
 ]
