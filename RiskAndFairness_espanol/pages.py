@@ -123,11 +123,17 @@ class Questions(Page):
 
     def is_displayed(self):
         mode = self.player.participant.vars['dynamic_values'][self.round_number - 1]['mode']
-        if self.round_number == Constants.num_rounds:
-            return mode == 'sec_ownrisk'
+        if mode == 'sec_ownrisk':
+            counter = 1
+            prevmode = self.player.participant.vars['dynamic_values'][self.round_number - 2]['mode']
+            while mode == prevmode:
+                counter += 1;
+                if counter == self.round_number:
+                    break
+                prevmode = self.player.participant.vars['dynamic_values'][self.round_number - (counter + 1)]['mode']
         else:
-            nextmode = self.player.participant.vars['dynamic_values'][self.round_number]['mode']
-            return mode != nextmode and mode == 'sec_ownrisk'
+            counter = 1
+        return counter == 25 and mode == 'sec_ownrisk'
         
 class ResultsWaitPage(WaitPage):
 
