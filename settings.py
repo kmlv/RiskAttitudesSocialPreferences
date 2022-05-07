@@ -138,7 +138,7 @@ mturk_hit_settings = {
 
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 0.2,
-    'participation_fee': 5.00,
+    'participation_fee': 10.00,
     'doc': "",
     'mturk_hit_settings': mturk_hit_settings,
 }
