@@ -181,7 +181,7 @@ SESSION_CONFIGS = [
         'display_name': 'Risk Preferences español',
         'num_demo_participants': 2,
         'real_world_currency_per_point': 0.2,
-        'participation_fee': 5.00,
+        'participation_fee': 10.00,
         'app_sequence': ['initial_page','RiskAndFairness_espanol','demograp_es','final']
     },
     {

@@ -27,6 +27,7 @@
         </h2>
 
         <p>
+            <b>En este gráfico, el eje horizontal indica las fichas pagadas si ocurre el estado A, y el eje  vertical indica las fichas pagadas si ocurre el estado B.</b>
             En cada ronda de decisión, habrá dos estados probables: Estado A y Estado B. Piense en estos 
             estados como el clima: podría estar soleado o nublado. Sin embargo, cuando toma su decisión, 
             no está claro qué estado ocurrirá.
@@ -55,7 +56,7 @@
         {% if mode == 'sec_1bl_1ch' %}
 
             <p>
-                En cada decisión de esta tarea, tanto usted como su pareja comparten la misma fortuna. 
+                Para esta tarea, elige un sorteo para usted y para su pareja. En cada decisión de esta tarea, tanto usted como su pareja comparten la misma fortuna. 
                 Es decir, en cada estado, la cantidad de fichas que ambos reciben es la misma. Mire la 
                 figura a continuación con un ejemplo. Dado que en esta tarea ambos enfrentan el mismo destino, 
                 su cuadrado azul y el círculo naranja de su pareja siempre se ubican en la misma posición. 
@@ -71,7 +72,7 @@
         {% elif mode == 'sec_2bl_1ch' %}
 
             <p>
-                En cada decisión de esta tarea, tanto usted como su pareja tienen fortunas opuestas. 
+                Para esta tarea, elige un sorteo para usted y para su pareja. En cada decisión de esta tarea, tanto usted como su pareja tienen fortunas opuestas. 
                 Es decir, lo que obtendría en el Estado A es igual a lo que recibiría su pareja en el 
                 Estado B. De manera similar, lo que obtendría en el Estado B es lo que obtendría su 
                 pareja en el Estado A. Dado que usted y su pareja enfrentan destinos opuestos, su cuadrado
@@ -90,7 +91,7 @@
         {% elif mode == 'sec_ownrisk' %}
 
             <p>
-                Para esta tarea, decide sobre su propio sorteo. Consulte la figura a continuación para ver 
+                Para esta tarea, usted elige su propio sorteo. Consulte la figura a continuación para ver 
                 un ejemplo. Aquí los estados A y B ocurren cada uno con un 50% de probabilidad. 
                 Su elección está representada por un cuadrado azul. En la figura de muestra, la ubicación del 
                 cuadrado es (40, 6.7). Esto significa que, si ocurre el estado A, obtendrá 40 fichas y si 
