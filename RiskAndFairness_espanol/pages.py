@@ -27,7 +27,35 @@ class InitialInstructions_2(Page):
     form_fields = ['time_InitialInstructions_2']
 
     def is_displayed(self):
-        return self.round_number == 1
+        mode = self.player.participant.vars['dynamic_values'][self.round_number - 1]['mode']
+        
+        modes=[]
+        for k in range(0,self.round_number):
+            modes.append(self.player.participant.vars['dynamic_values'][k]['mode'])
+        modes = set(modes)
+        mode = self.player.participant.vars['dynamic_values'][self.round_number - 1]['mode']
+        if self.round_number > 1:
+            prevmode = self.player.participant.vars['dynamic_values'][self.round_number - 2]['mode']
+        if self.round_number == 1:
+            if mode == 'sec_1bl_1ch':
+                return (mode == 'sec_2bl_1ch' or mode == 'det_giv' or mode == 'probability') not in modes 
+            elif mode == 'sec_2bl_1ch':
+                return (mode == 'sec_1bl_1ch' or mode == 'det_giv' or mode == 'probability') not in modes
+            elif mode == 'det_giv':
+                return (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'probability') not in modes
+            elif mode == 'probability':
+                return (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'det_giv') not in modes
+        elif self.round_number > 1:
+            if mode == 'sec_1bl_1ch':
+                return (mode == 'sec_2bl_1ch' or mode == 'det_giv' or mode == 'probability') not in modes and mode != prevmode
+            elif mode == 'sec_2bl_1ch':
+                return (mode == 'sec_1bl_1ch' or mode == 'det_giv' or mode == 'probability') not in modes and mode != prevmode
+            elif mode == 'det_giv':
+                return (mode == 'sec_2bl_1ch' and mode == 'sec_1bl_1ch' or mode == 'probability') not in modes and mode != prevmode
+            elif mode == 'probability':
+                return (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'det_giv') not in modes and mode != prevmode
+
+
 
     def vars_for_template(self):
         numberOfPeriod = config.numberOfPeriod()
