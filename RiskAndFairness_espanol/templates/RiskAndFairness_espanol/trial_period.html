@@ -2,6 +2,9 @@
 {% load staticfiles otree %}
 
 {% block title %}
+
+    <h1 style="color:#BFBFBF">Ronda de práctica (no por dinero) - Tarea {{ counter2 }} </h1>
+    {% comment %}
     {% if mode == 'probability' %}
         <h1 style="color:#BFBFBF">Ronda de práctica (no por dinero) - Tarea 4</h1>
     {% elif mode == 'sec_1bl_1ch' %}
@@ -17,8 +20,10 @@
     {% elif mode == 'sec_otherrisk_ownfixed' %}
         <h1 style="color:#BFBFBF">Ronda de práctica (no por dinero) - Tarea 7</h1>
     {% elif mode == 'det_giv' %}
-         <h1 style="color:#BFBFBF">Ronda de práctica (no por dinero) - Tarea 5</h1>
+        <h1 style="color:#BFBFBF">Ronda de práctica (no por dinero) - Tarea 5</h1>
     {% endif %}
+    {% endcomment %}
+
 {% endblock %}
 
 
@@ -266,7 +271,7 @@
 
     </script>
 
-    <script src="{% static 'js/graph_sp.js' %}"></script>
+    <script src="{% static 'js/graph_es.js' %}"></script>
 
 {% endblock %}
 

@@ -332,6 +332,7 @@ var vm = new Vue({
             this.graph.svg.append('text')
             .attr('transform', 'translate(' + (this.dimension.width / 2) + ', ' + (this.dimension.height + this.margin.top + 15) + ')')
             .style('text-anchor', 'middle')
+            .style('font', '20px sans-serif')
             .text(this.label.x)
 
             this.graph.svg.append('g')
@@ -343,7 +344,9 @@ var vm = new Vue({
             .attr('y', 0 - this.margin.left)
             .attr('x', 0 - (this.dimension.height / 2))
             .attr('dy', '1em')
+            .style('font', '20px sans-serif')
             .style('text-anchor', 'middle')
+        
             .text(this.label.y)
         },
         // draw the equation with d3.js

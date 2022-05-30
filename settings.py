@@ -137,8 +137,8 @@ mturk_hit_settings = {
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 0.2,
-    'participation_fee': 10.00,
+    'real_world_currency_per_point': 0.25,
+    'participation_fee': 7.00,
     'doc': "",
     'mturk_hit_settings': mturk_hit_settings,
 }
@@ -180,8 +180,8 @@ SESSION_CONFIGS = [
         'name': 'RiskAndFairness_espanol',
         'display_name': 'Risk Preferences español',
         'num_demo_participants': 2,
-        'real_world_currency_per_point': 0.2,
-        'participation_fee': 10.00,
+        'real_world_currency_per_point': 0.25,
+        'participation_fee': 7.00,
         'app_sequence': ['initial_page','RiskAndFairness_espanol','demograp_es','final']
     },
     {
@@ -198,4 +198,4 @@ SENTRY_DSN = 'http://cef5e70f5ff14cfeaefc70c9a320102d:710fd43a8a6e4cecb32c365a1d
 # anything you put after the below line will override
 # oTree's default settings. Use with caution.
 otree.settings.augment_settings(globals())
-DEBUG = False
+DEBUG = True

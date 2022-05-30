@@ -9,6 +9,8 @@
     {% if mode == 'sec_1bl_1ch' or mode == 'sec_1bl_2ch' or mode == 'sec_2bl_1ch' or mode == 'sec_2bl_2ch' or mode == 'sec_ownrisk' or mode == 'sec_ownrisk_fixedother' or mode == 'sec_otherrisk_ownfixed' %}
 
         <h2 class="panel-sub-heading">
+            Instrucciones - Tarea {{ counter2 }}
+            {% comment %}
             {% if mode == 'sec_1bl_1ch'%}
                 Instrucciones - Tarea 2
             {% elif mode == 'sec_1bl_2ch'%}
@@ -24,85 +26,158 @@
             {% elif mode == 'sec_otherrisk_ownfixed' %}
             Instrucciones - Tarea 7
             {% endif %}
+            {% endcomment %}
         </h2>
 
-        <p>
-            <b>En este gráfico, el eje horizontal indica las fichas pagadas si ocurre el estado A, y el eje  vertical indica las fichas pagadas si ocurre el estado B.</b>
-            En cada ronda de decisión, habrá dos estados probables: Estado A y Estado B. Piense en estos 
-            estados como el clima: podría estar soleado o nublado. Sin embargo, cuando toma su decisión, 
-            no está claro qué estado ocurrirá.
-        </p>
-        <p>
-            Su decisión estará representada por un punto en un gráfico como el de la figura a continuación. 
-            En este gráfico, el eje horizontal indica las fichas pagadas si ocurre el estado A, y el eje 
-            vertical indica las fichas pagadas si ocurre el estado B. La probabilidad de que ocurra cada 
-            estado es del 50 % y se muestra en la etiqueta de cada eje.
-            <!-- se muestra entre paréntesis en la etiqueta del eje correspondiente. En la captura de 
-            pantalla, por ejemplo, la probabilidad del estado A es del 50 % y la probabilidad del estado B 
-            también es del 50 %. Tenga en cuenta que estas probabilidades pueden ser diferentes en diferentes 
-            rondas de decisión.-->
-        </p>
-        <p>
-            La posición de un punto en este gráfico representa un sorteo. Por ejemplo, el punto en la 
-            ubicación (40, 20) indica que si se realiza el Estado A, el sorteo paga 40 fichas; y si se 
-            realiza el Estado B, el sorteo paga 20 fichas. <i style="color: blue">Su sorteo</i> se 
-            representará con un <i style="color: blue">cuadrado azul</i>, y el <i style="color: orange"> sorteo de su pareja</i> por un 
-            <i style="color: orange">círculo naranja</i>.
-            
-        </p>
-
-        <h4> Su Tarea: </h4>
 
         {% if mode == 'sec_1bl_1ch' %}
-
             <p>
-                Para esta tarea, elige un sorteo para usted y para su pareja. En cada decisión de esta tarea, tanto usted como su pareja comparten la misma fortuna. 
-                Es decir, en cada estado, la cantidad de fichas que ambos reciben es la misma. Mire la 
-                figura a continuación con un ejemplo. Dado que en esta tarea ambos enfrentan el mismo destino, 
-                su cuadrado azul y el círculo naranja de su pareja siempre se ubican en la misma posición. 
-                En el ejemplo, ambos están en el lugar (50, 16.7). Esto significa que, si ocurre el Estado A, 
-                usted y su pareja obtendrán 50 fichas cada uno y, si ocurre el Estado B, cada uno obtendrá 16,7 fichas. 
-                Al comienzo de cada ronda de decisión, el cuadrado y el círculo aparecerán en una posición aleatoria. 
-                Para elegir, arrastre el cuadrado o el círculo a la ubicación elegida. La otra forma lo seguirá.
-                </p>
-                <p>
-                    <b>Toma cada decisión con cuidado porque podría ser seleccionada para el pago.  </b>
-                </p>
+                En esta tarea, usted tomará decisiones que pueden afectar su propio pago y el de su pareja. 
+            </p>
+            <p>
+                En cada ronda de decisión, habrá dos estados posibles : Estado A y Estado B. Estos estados son mutuamente excluyentes. 
+                Es decir, que solo uno de ellos puede ocurrir. Piense en estos estados como el clima: puede estar ó soleado o nublado. 
+                Sin embargo, cuando toma su decisión, no se sabe qué estado ocurrirá. Ambos estados tienen la misma probabilidad de 
+                ocurrir, es decir, 50%.
+            </p>
+            <p>
+                Su decisión estará representada por un punto en un gráfico como el de la figura a continuación.
+                <b> En este gráfico, el eje horizontal indica las fichas pagadas si ocurre el estado A, y el eje
+                vertical indica las fichas pagadas si ocurre el estado B.</b> La probabilidad de que ocurra cada
+                estado es del 50 % y se muestra en la etiqueta de cada eje.     
+            </p>
+            <p>
+                La posición de un punto en este gráfico representa un sorteo. Por ejemplo, el punto en la
+                ubicación (40, 20) indica que si ocurre el Estado A, el sorteo paga 40 fichas; y si ocurre 
+                el Estado B, el sorteo paga 20 fichas. <i style="color: blue">Su sorteo</i> se
+                representará con un <i style="color: blue">cuadrado azul</i> , y el <i style="color: orange"> sorteo de su pareja</i> por un
+                <i style="color: orange">círculo naranja</i>.
+            </p>
+            <h4> Su Tarea: </h4>
+            <p>
+                En esta tarea, en cada ronda de decisión, usted elige un sorteo para usted y para su pareja. En cada decisión, 
+                tanto usted como su pareja comparten la misma fortuna.
+                <b>Es decir, en cada estado, la cantidad de fichas que ambos reciben es la misma. </b> 
+                Dado que en esta tarea ambos enfrentan la  misma suerte,
+                su cuadrado azul y el círculo naranja de su pareja siempre se ubican en la misma posición.
+                En el ejemplo, ambos están en el lugar (50, 16.7). Esto significa que, si ocurre el Estado A, ambos
+                (usted y su pareja) obtendrán 50 fichas cada uno y, si ocurre el Estado B, cada uno obtendrá 16.7 fichas.
+                Al comienzo de cada ronda de decisión, el cuadrado y el círculo aparecerán en una posición aleatoria.
+                Para elegir, arrastre el cuadrado o el círculo a la ubicación elegida. El  otro símbolo lo seguirá. 
+                Puede probar todas las loterías que usted quiera antes de tomar una decisión. Una vez que tome su decisión,
+                presione el botón Enviar Decisión y continúe con la siguiente ronda.
+                
+            </p>
+                <b>
+                    RECUERDE:
+                </b>
+                <ul>
+                    <li> Tome cada decisión con cuidado porque podría ser seleccionada para el pago.</li> 
+                    
+                    <li> En esta tarea, el eje horizontal indica las fichas pagadas si ocurre el estado A, y el eje vertical indica las fichas pagadas si ocurre el estado B.</li> 
+                    
+                    <li> En esta tarea, el cuadrado azul señala tu lotería y el círculo naranja señala la lotería de tu pareja.</li> 
+                </ul>
+            </p>
+            <p>A continuación, se le presenta una ronda de prueba. </p>
+            
 
         {% elif mode == 'sec_2bl_1ch' %}
-
             <p>
-                Para esta tarea, elige un sorteo para usted y para su pareja. En cada decisión de esta tarea, tanto usted como su pareja tienen fortunas opuestas. 
-                Es decir, lo que obtendría en el Estado A es igual a lo que recibiría su pareja en el 
-                Estado B. De manera similar, lo que obtendría en el Estado B es lo que obtendría su 
-                pareja en el Estado A. Dado que usted y su pareja enfrentan destinos opuestos, su cuadrado
-                azul y el círculo naranja de su pareja siempre están en posiciones especulares en el 
+                En esta tarea, usted tomará decisiones que pueden afectar su propio pago y el de su pareja. 
+            </p>
+            <p>
+                En cada ronda de decisión, habrá dos estados posibles : Estado A y Estado B. Estos estados son mutuamente excluyentes. 
+                Es decir, que solo uno de ellos puede ocurrir. Piense en estos estados como el clima: puede estar ó soleado o nublado. 
+                Sin embargo, cuando toma su decisión, no se sabe qué estado ocurrirá. Ambos estados tienen la misma probabilidad de 
+                ocurrir, es decir, 50%.
+            </p>
+            <p>
+                Su decisión estará representada por un punto en un gráfico como el de la figura a continuación.
+                <b> En este gráfico, el eje horizontal indica las fichas pagadas si ocurre el estado A, y el eje
+                vertical indica las fichas pagadas si ocurre el estado B.</b> La probabilidad de que ocurra cada
+                estado es del 50 % y se muestra en la etiqueta de cada eje.     
+            </p>
+            <p>
+                La posición de un punto en este gráfico representa un sorteo. Por ejemplo, el punto en la
+                ubicación (40, 20) indica que si ocurre el Estado A, el sorteo paga 40 fichas; y si ocurre 
+                el Estado B, el sorteo paga 20 fichas. <i style="color: blue">Su sorteo</i> se
+                representará con un <i style="color: blue">cuadrado azul</i> , y el <i style="color: orange"> sorteo de su pareja</i> por un
+                <i style="color: orange">círculo naranja</i>.
+            </p>
+            <h4> Su Tarea: </h4>
+            <p>
+                En esta tarea, en cada ronda de decisión, usted elige un sorteo para usted y para su pareja. 
+                En cada decisión, tanto usted como su pareja tienen fortunas opuestas.
+                <b> Es decir, lo que usted obtendría en el Estado A es igual a lo que recibiría su pareja en el
+                Estado B. De manera similar, lo que usted obtendría en el Estado B es lo que obtendría su
+                pareja en el Estado A. </b> Dado que usted y su pareja enfrentan fortunas  opuestos, su cuadrado
+                azul y el círculo naranja de su pareja siempre están en posiciones especulares en el
                 gráfico. En la captura de pantalla, por ejemplo, su cuadrado está en (Estado A = 50, B = 16,7)
-                 y el círculo de su pareja en (Estado A = 16,7, B = 50). Esto significa que, si ocurre el 
-                 Estado A, usted recibe 50 y su pareja obtiene 16,7; y, si ocurre el Estado B, usted obtiene 
-                 16,7 y su pareja obtiene 50. Al comienzo de cada ronda de decisión, el cuadrado y el círculo 
-                 aparecerán en una posición aleatoria. Para elegir, arrastre el cuadrado o el círculo a las 
-                 ubicaciones elegidas. La otra forma se ajustará automáticamente a la posición del espejo.
+                y el círculo de su pareja en (Estado A = 16,7, B = 50). Esto significa que, si ocurre el
+                Estado A, usted recibe 50 y su pareja obtiene 16,7; y, si ocurre el Estado B, usted obtiene
+                16,7 y su pareja obtiene 50. Al comienzo de cada ronda de decisión, el cuadrado y el círculo
+                aparecerán en una posición aleatoria. Para elegir, arrastre el cuadrado o el círculo a la
+                ubicación elegida. El otro símbolo se ajustará automáticamente. Puede probar todas las loterías que usted quiera antes de tomar una decisión. Una vez que tome su decisión,
+                presione el botón Enviar Decisión y continúe con
+                la siguiente ronda.
             </p>
             <p>
-                <b>Toma cada decisión con cuidado porque podría ser seleccionada para el pago.  </b>
+                <b>RECUERDE:</b>
+                <ul>
+                    <li> Tome cada decisión con cuidado porque podría ser seleccionada para el pago.</li> 
+              
+                    <li> En esta tarea, el eje horizontal indica las fichas pagadas si ocurre el estado A, y el eje vertical indica las fichas pagadas si ocurre el estado B.</li> 
+              
+                    <li> En esta tarea, el cuadrado azul señala tu lotería y el círculo naranja señala la lotería de tu pareja.</li> 
+                </ul>
             </p>
+            <p>A continuación, se le presenta una ronda de prueba. </p>
 
         {% elif mode == 'sec_ownrisk' %}
-
             <p>
-                Para esta tarea, usted elige su propio sorteo. Consulte la figura a continuación para ver 
-                un ejemplo. Aquí los estados A y B ocurren cada uno con un 50% de probabilidad. 
-                Su elección está representada por un cuadrado azul. En la figura de muestra, la ubicación del 
-                cuadrado es (40, 6.7). Esto significa que, si ocurre el estado A, obtendrá 40 fichas y si 
-                ocurre el estado B, obtendrá 6,7 fichas. Al comienzo de cada pantalla de decisión, el 
-                cuadrado aparecerá en una posición aleatoria. Para hacer una elección, arrastre el cuadrado a 
-                la ubicación de su preferencia.
+                En esta tarea, usted tomará decisiones que pueden afectar solamente su propio pago.
             </p>
             <p>
-                <b>Toma cada decisión con cuidado porque podría ser seleccionada para el pago.  </b>
+                En cada ronda de decisión, habrá dos estados posibles : Estado A y Estado B. Estos estados son mutuamente excluyentes. 
+                Es decir, que solo uno de ellos puede ocurrir. Piense en estos estados como el clima: puede estar ó soleado o nublado. 
+                Sin embargo, cuando toma su decisión, no se sabe qué estado ocurrirá. Ambos estados tienen la misma probabilidad de 
+                ocurrir, es decir, 50%.
             </p>
-
+            <p>
+                Su decisión estará representada por un punto en un gráfico como el de la figura a continuación.
+                <b> En este gráfico, el eje horizontal indica las fichas pagadas si ocurre el estado A, y el eje
+                vertical indica las fichas pagadas si ocurre el estado B.</b> La probabilidad de que ocurra cada
+                estado es del 50 % y se muestra en la etiqueta de cada eje.
+            </p>     
+            <p>
+                La posición de un punto en este gráfico representa un sorteo. Por ejemplo, el punto en la
+                ubicación (40, 20) indica que si ocurre el Estado A, el sorteo paga 40 fichas; y si ocurre 
+                el Estado B, el sorteo paga 20 fichas. <i style="color: blue">Su sorteo</i> se
+                representará con un <i style="color: blue">cuadrado azul</i>.
+            </p>
+            <h4> Su Tarea: </h4>
+            <p>
+                En esta tarea, en cada ronda de decisión, <b> usted elige su propio sorteo. </b> Consulte la figura a continuación para 
+                ver un ejemplo.</b> Su elección está representada por un cuadrado azul. En la figura de muestra, la ubicación del
+                cuadrado es (40, 6.7). Esto significa que, si ocurre el estado A, usted obtendrá 40 fichas y si
+                ocurre el estado B, obtendrá 6,7 fichas. Al comienzo de cada pantalla de decisión, el
+                cuadrado aparecerá en una posición aleatoria. Para hacer una elección, arrastre el cuadrado a
+                la ubicación de su preferencia. Puede probar todas las loterías que usted quiera antes de tomar
+                una decisión. Una vez que tome su decisión, presione el botón Enviar Decisión y continúe con  la siguiente ronda.
+            </p>
+            <p>
+                <b> RECUERDE: </b>
+                <ul>
+                    <li> Tome cada decisión con cuidado porque podría ser seleccionada para el pago.</li> 
+                
+                    <li> En esta tarea, el eje horizontal indica las fichas pagadas si ocurre el estado A, y el eje vertical indica las fichas pagadas si ocurre el estado B.</li> 
+                
+                    <li> En esta tarea, el cuadrado azul indica tu lotería.</li> 
+                </ul>
+            </p>
+            <p>A continuación, se le presenta una ronda de prueba. </p>
+                
         {% elif mode == 'sec_ownrisk_fixedother' %}
             <p>
                 Para esta tarea, la fortuna de su pareja es fija y debe elegir su propio sorteo. Dado que 

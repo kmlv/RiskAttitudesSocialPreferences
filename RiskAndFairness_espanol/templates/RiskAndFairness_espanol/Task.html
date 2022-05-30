@@ -2,6 +2,9 @@
 {% load staticfiles otree %}
 
 {% block title %}
+
+    <h1 style="color:#BFBFBF">Tarea {{ counter2 }} - Decisión {{ counter }}</h1>
+    {% comment %}
     {% if mode == 'probability' %}
         <h1 style="color:#BFBFBF">Tarea 4 - Decisión {{ counter }}</h1>
     {% elif mode == 'sec_1bl_1ch' %}
@@ -19,6 +22,8 @@
     {% elif mode == 'det_giv' %}
          <h1 style="color:#BFBFBF">Tarea 5 - Decisión {{ counter }}</h1>
     {% endif %}
+    {% endcomment %}
+
 {% endblock %}
 
 
@@ -216,7 +221,7 @@
 
     </script>
 
-    <script src="{% static 'js/graph_sp.js' %}"></script>
+    <script src="{% static 'js/graph_es.js' %}"></script>
 
 {% endblock %}
 

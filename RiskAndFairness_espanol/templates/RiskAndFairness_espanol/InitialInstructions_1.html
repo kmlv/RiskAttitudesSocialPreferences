@@ -1,0 +1,65 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree %}
+
+{% block scripts %}
+    <script type="text/javascript">
+      window.onload = function () 
+      {
+        document.getElementById("arrive_time").value = (new Date()).toISOString();
+      }
+    </script>
+{% endblock %}
+
+
+{% block title %}
+    ¡Bienvenidos!
+{% endblock %}
+
+{% block content %}
+<!--
+    Principal maintainer: Eli Pandolfo <epandolf@ucsc.edu>
+    Contributor: Kristian Lopez Vargas <kristianlvargas@gmail.com>
+-->
+    <input type="hidden" name="time_InitialInstructions_1" id="arrive_time"/>
+
+    <h3>Instrucciones Generales:</h3>
+
+    <p>
+        Por favor, préstele atención a las instrucciones. Se le pedirá que realice elecciones en 
+        {{ Constants.number_types_of_tasks | json }}
+        diferentes tareas. Las reglas más precisas se les proveerán antes de que empiece cada tarea.
+        
+    </p>
+    <p>
+        Su pago final hoy dependerá en parte de sus elecciones, las elecciones de otros, y del azar. 
+        Al final del experimento, se le pagará por su medio de pago de preferencia.
+        Todos los pagos se realizarán por medio digital. Asimismo, recibirá un pago de 
+        {{ participation_fee }} solo por su participación. 
+    </p>
+    <p>
+        Durante la sesión, se usarán <strong>Fichas del Experimento</strong> en vez de soles.
+        Al final del estudio, su ganancia en fichas será transferido en soles. Usted recibirá 1 sol por cada
+        4 fichas que tenga al final de la sesión.
+        Es importante de que no se distraiga con su celular o su entorno durante la sesión. Si tiene alguna pregunta,
+        escríbanos por el WhatsApp o correo del E2LabUP. El experimento debería terminar en aproximadamente una hora.
+        
+    </p>
+
+    <h3>Tareas, rondas de decisión, ganancias</h3>
+
+    <p>
+        El estudio consiste de {{ Constants.number_types_of_tasks | json }} tareas diferentes. Cada tarea tiene
+        múltiples rondas de decisión. La sesión tiene un total de {{ Constants.num_rounds | json }} rondas de decisión.
+        Antes de que cada tarea empiece, recibirá instrucciones específicas.
+    </p>
+    <p>
+        Al finalizar el experimento,la computadora seleccionará aleatoriamente una ronda de decisión  para realizar el pago final.
+        Todas las rondas de decisión tienen la misma probabilidad de ser seleccionadas.
+        Por tanto, le conviene tratar cada decisión como si fuera la ronda seleccionada para pago.
+        Al final de toda la sesión, será informado/a de sus ganancias.   
+    </p>
+    </br>
+
+    {% next_button %}
+{% endblock %}
+

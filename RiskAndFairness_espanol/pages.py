@@ -11,9 +11,20 @@ Contributors:
     Rachel Chen <me@rachelchen.me>
 """
 
-class InitialInstructions(Page):
+class InitialInstructions_1(Page):
     form_model = 'player'
-    form_fields = ['time_InitialInstructions']
+    form_fields = ['time_InitialInstructions_1']
+
+    def is_displayed(self):
+        return self.round_number == 1
+
+    def vars_for_template(self):
+        numberOfPeriod = config.numberOfPeriod()
+        return {'participation_fee': self.session.config['participation_fee']}
+
+class InitialInstructions_2(Page):
+    form_model = 'player'
+    form_fields = ['time_InitialInstructions_2']
 
     def is_displayed(self):
         return self.round_number == 1
@@ -37,13 +48,24 @@ class TaskInstructions(Page):
         dynamic_values = self.player.participant.vars['dynamic_values']
         round_data = dynamic_values[self.round_number - 1]
         mode = round_data['mode']
+        if self.round_number > 1:
+            modes=[]
+            for k in range(0,self.round_number):
+                modes.append(self.player.participant.vars['dynamic_values'][k]['mode'])
+            modes = set(modes)
+            counter2 = len(modes)
+            print(modes)
+        else:
+            counter2 = 1
         # this will be used in the conditional display of instructions
         return {'dynamic_values': dynamic_values,
                 'mode': mode,
+                'counter2': counter2,
                 'sec0': '' if mode in ['probability', 'det_giv'] else mode.split('_')[0],
                 'sec1': '' if mode in ['probability', 'det_giv'] else mode.split('_')[1],
                 'sec2': '' if mode in ['probability', 'det_giv', 'sec_ownrisk'] else mode.split('_')[2]
                 }
+
 
         
 class ControlQuestions(Page):
@@ -92,6 +114,7 @@ class Task(Page):
         dynamic_values = self.player.participant.vars['dynamic_values']
         mode = self.player.participant.vars['dynamic_values'][self.round_number - 1]['mode']
         print('MODE MODE MODE', mode)
+        prevmode = self.player.participant.vars['dynamic_values'][self.round_number - 2]['mode']
         if self.round_number > 1:
             counter = 1
             prevmode = self.player.participant.vars['dynamic_values'][self.round_number - 2]['mode']
@@ -102,8 +125,20 @@ class Task(Page):
                 prevmode = self.player.participant.vars['dynamic_values'][self.round_number - (counter + 1)]['mode']
         else:
             counter = 1
+
+        if self.round_number > 1:
+            modes=[]
+            for k in range(0,self.round_number):
+                modes.append(self.player.participant.vars['dynamic_values'][k]['mode'])
+            modes = set(modes)
+            counter2 = len(modes)
+            print(modes)
+        else:
+            counter2 = 1
+        
         return {'dynamic_values': dynamic_values,
                 'mode': mode,
+                'counter2': counter2,
                 'counter': counter,
                 'sec1': '' if mode in ['probability', 'det_giv'] else mode.split('_')[1],
                 'sec2': '' if mode in ['probability', 'det_giv', 'sec_ownrisk'] else mode.split('_')[2]
@@ -152,6 +187,7 @@ class Results(Page):
         return self.round_number == Constants.num_rounds
 
     def vars_for_template(self):
+
 
         modeMap = {
         'probability': 'PR',
@@ -231,7 +267,8 @@ class Results(Page):
 
 
 page_sequence = [
-    InitialInstructions,
+    InitialInstructions_1,
+    InitialInstructions_2,
     TaskInstructions,
     ControlQuestions,
     Task,
