@@ -61,7 +61,13 @@
                 ubicación (40, 20) indica que si ocurre el Estado A, el sorteo paga 40 fichas; y si ocurre 
                 el Estado B, el sorteo paga 20 fichas. <i style="color: blue">Su sorteo</i> se
                 representará con un <i style="color: blue">cuadrado azul</i>, y el <i style="color: orange">sorteo de su pareja</i> por un
-                <i style="color: orange">círculo naranja</i>. Solo las combinaciones en la línea son opciones factibles.
+                <i style="color: orange">círculo naranja</i>. 
+                {% if mode == 'sec_ownrisk_fixedother' %}
+                    Solo las combinaciones en las que el cuadrado está en la línea son opciones factibles.
+                {% elif mode == 'sec_1bl_1ch' %}
+                    Solo las combinaciones en las líneas son opciones factibles.
+                {% endif %}
+
             </p>
         {% elif mode == 'sec_2bl_1ch' %}
             <p>
@@ -89,7 +95,7 @@
                 Dado que en esta tarea ambos enfrentan la misma suerte,
                 su cuadrado azul y el círculo naranja de su pareja siempre se ubican en la misma posición.
                 En el ejemplo, ambos están en el lugar (50, 16.8). Esto significa que, si ocurre el Estado A, ambos
-                (usted y su pareja) obtendrán 50 fichas cada uno y, si ocurre el Estado B, cada uno obtendrá 16.7 fichas.
+                (usted y su pareja) obtendrán 50 fichas cada uno y, si ocurre el Estado B, cada uno obtendrá 16.8 fichas.
             </p>
             <p>
                 Al comienzo de cada ronda de decisión, el cuadrado y el círculo aparecerán en una posición aleatoria.
@@ -104,7 +110,7 @@
         {% elif mode == 'sec_2bl_1ch' %}
             <p>
                 En esta tarea, en cada ronda de decisión, usted elige un sorteo para usted y para su pareja. 
-                En cada decisión, tanto usted como su pareja tienen fortunas opuestas. <b>Es decir, lo que usted obtendría en el Estado A es igual a lo que recibiría su pareja en el
+                <b>En cada decisión, tanto usted como su pareja tienen fortunas opuestas. Es decir, lo que usted obtendría en el Estado A es igual a lo que recibiría su pareja en el
                 Estado B. De manera similar, lo que usted obtendría en el Estado B es lo que obtendría su
                 pareja en el Estado A.</b> Dado que usted y su pareja enfrentan fortunas opuestas, su cuadrado
                 azul y el círculo naranja de su pareja siempre están en posiciones especulares en el
@@ -143,8 +149,8 @@
         
         {% elif mode == 'sec_ownrisk_fixedother' %}
             <p>
-                Para esta tarea, usted debe elegir su propio sorteo. 
-                La fortuna de su pareja es fija, pues recibirá 0 con seguridad.
+                <b>Para esta tarea, usted debe elegir su propio sorteo. 
+                La fortuna de su pareja es fija, pues recibirá 0 con seguridad.</b>
                 En la captura de pantalla, por ejemplo, su cuadrado 
                 está en (Estado A = 6, B = 32) y el círculo de su pareja en (Estado A = 0, B = 0). 
                 Esto significa que, si sucede el Estado A, usted recibe 6 y su pareja obtiene 0; y si 
