@@ -138,7 +138,7 @@ mturk_hit_settings = {
 
 SESSION_CONFIG_DEFAULTS = {
     'real_world_currency_per_point': 0.25,
-    'participation_fee': 7.00,
+    'participation_fee': 8.00,
     'doc': "",
     'mturk_hit_settings': mturk_hit_settings,
 }
@@ -181,7 +181,7 @@ SESSION_CONFIGS = [
         'display_name': 'Risk Preferences español',
         'num_demo_participants': 2,
         'real_world_currency_per_point': 0.25,
-        'participation_fee': 7.00,
+        'participation_fee': 8.00,
         'app_sequence': ['initial_page','RiskAndFairness_espanol','demograp_es','final']
     },
     {

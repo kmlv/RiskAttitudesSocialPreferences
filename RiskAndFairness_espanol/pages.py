@@ -11,7 +11,7 @@ Contributors:
     Rachel Chen <me@rachelchen.me>
 """
 
-class InitialInstructions_1(Page):
+class InitialInstructions(Page):
     form_model = 'player'
     form_fields = ['time_InitialInstructions_1']
 
@@ -21,48 +21,6 @@ class InitialInstructions_1(Page):
     def vars_for_template(self):
         numberOfPeriod = config.numberOfPeriod()
         return {'participation_fee': self.session.config['participation_fee']}
-
-class InitialInstructions_2(Page):
-    form_model = 'player'
-    form_fields = ['time_InitialInstructions_2']
-
-    def is_displayed(self):
-        mode = self.player.participant.vars['dynamic_values'][self.round_number - 1]['mode']
-        
-        modes=[]
-        for k in range(0,self.round_number):
-            modes.append(self.player.participant.vars['dynamic_values'][k]['mode'])
-        modes = set(modes)
-        mode = self.player.participant.vars['dynamic_values'][self.round_number - 1]['mode']
-        if self.round_number > 1:
-            prevmode = self.player.participant.vars['dynamic_values'][self.round_number - 2]['mode']
-        if self.round_number == 1:
-            if mode == 'sec_1bl_1ch' and (mode == 'sec_2bl_1ch' or mode == 'det_giv' or mode == 'probability') in modes:
-                return False 
-            elif mode == 'sec_2bl_1ch' and (mode == 'sec_1bl_1ch' or mode == 'det_giv' or mode == 'probability') in modes:
-                return False
-            elif mode == 'det_giv' and (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'probability') in modes:
-                return False
-            elif mode == 'probability' and (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'det_giv') in modes:
-                return False
-        elif self.round_number > 1:
-            if mode == 'sec_1bl_1ch' and (mode == 'sec_2bl_1ch' or mode == 'det_giv' or mode == 'probability') in modes or mode == prevmode:
-                return False 
-            elif mode == 'sec_2bl_1ch' and (mode == 'sec_1bl_1ch' or mode == 'det_giv' or mode == 'probability') in modes or mode == prevmode:
-                return False
-            elif mode == 'det_giv' and (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'probability') in modes or mode == prevmode:
-                return False
-            elif mode == 'probability' and (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'det_giv') in modes or mode == prevmode:
-                return False
-        else:
-            True
-
-
-
-    def vars_for_template(self):
-        numberOfPeriod = config.numberOfPeriod()
-        return {'participation_fee': self.session.config['participation_fee']}
-
 
 class TaskInstructions(Page):
     form_model = 'player'
@@ -297,8 +255,7 @@ class Results(Page):
 
 
 page_sequence = [
-    InitialInstructions_1,
-    InitialInstructions_2,
+    InitialInstructions,
     TaskInstructions,
     ControlQuestions,
     Task,
