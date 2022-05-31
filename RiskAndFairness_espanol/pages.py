@@ -13,7 +13,7 @@ Contributors:
 
 class InitialInstructions(Page):
     form_model = 'player'
-    form_fields = ['time_InitialInstructions_1']
+    form_fields = ['time_InitialInstructions']
 
     def is_displayed(self):
         return self.round_number == 1
