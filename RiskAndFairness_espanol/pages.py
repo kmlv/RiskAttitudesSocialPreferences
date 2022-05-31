@@ -37,23 +37,25 @@ class InitialInstructions_2(Page):
         if self.round_number > 1:
             prevmode = self.player.participant.vars['dynamic_values'][self.round_number - 2]['mode']
         if self.round_number == 1:
-            if mode == 'sec_1bl_1ch':
-                return (mode == 'sec_2bl_1ch' or mode == 'det_giv' or mode == 'probability') not in modes 
-            elif mode == 'sec_2bl_1ch':
-                return (mode == 'sec_1bl_1ch' or mode == 'det_giv' or mode == 'probability') not in modes
-            elif mode == 'det_giv':
-                return (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'probability') not in modes
-            elif mode == 'probability':
-                return (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'det_giv') not in modes
+            if mode == 'sec_1bl_1ch' and (mode == 'sec_2bl_1ch' or mode == 'det_giv' or mode == 'probability') in modes:
+                return False 
+            elif mode == 'sec_2bl_1ch' and (mode == 'sec_1bl_1ch' or mode == 'det_giv' or mode == 'probability') in modes:
+                return False
+            elif mode == 'det_giv' and (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'probability') in modes:
+                return False
+            elif mode == 'probability' and (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'det_giv') in modes:
+                return False
         elif self.round_number > 1:
-            if mode == 'sec_1bl_1ch':
-                return (mode == 'sec_2bl_1ch' or mode == 'det_giv' or mode == 'probability') not in modes and mode != prevmode
-            elif mode == 'sec_2bl_1ch':
-                return (mode == 'sec_1bl_1ch' or mode == 'det_giv' or mode == 'probability') not in modes and mode != prevmode
-            elif mode == 'det_giv':
-                return (mode == 'sec_2bl_1ch' and mode == 'sec_1bl_1ch' or mode == 'probability') not in modes and mode != prevmode
-            elif mode == 'probability':
-                return (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'det_giv') not in modes and mode != prevmode
+            if mode == 'sec_1bl_1ch' and (mode == 'sec_2bl_1ch' or mode == 'det_giv' or mode == 'probability') in modes or mode == prevmode:
+                return False 
+            elif mode == 'sec_2bl_1ch' and (mode == 'sec_1bl_1ch' or mode == 'det_giv' or mode == 'probability') in modes or mode == prevmode:
+                return False
+            elif mode == 'det_giv' and (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'probability') in modes or mode == prevmode:
+                return False
+            elif mode == 'probability' and (mode == 'sec_2bl_1ch' or mode == 'sec_1bl_1ch' or mode == 'det_giv') in modes or mode == prevmode:
+                return False
+        else:
+            True
 
 
 

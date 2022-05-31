@@ -35,9 +35,9 @@ chosen_rounds = []
 
 data = [
 [
-{'mode': 'sec_ownrisk', 'm': 33.32, 'p_x': .33, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Fichas en Estado A (50%)', 'y': 'Fichas en Estado B (50%)'}},
-{'mode': 'sec_ownrisk', 'm': 34.2, 'p_x': .37, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Fichas en Estado A (50%)', 'y': 'Fichas en Estado B (50%)'}},
-# {'mode': 'sec_ownrisk', 'm': 35.16, 'p_x': .41, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}},
+# {'mode': 'sec_ownrisk', 'm': 33.32, 'p_x': .33, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Fichas en Estado A (50%)', 'y': 'Fichas en Estado B (50%)'}},
+# {'mode': 'sec_ownrisk', 'm': 34.2, 'p_x': .37, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Fichas en Estado A (50%)', 'y': 'Fichas en Estado B (50%)'}},
+# # {'mode': 'sec_ownrisk', 'm': 35.16, 'p_x': .41, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}},
 # {'mode': 'sec_ownrisk', 'm': 36.23, 'p_x': .45, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}},
 # {'mode': 'sec_ownrisk', 'm': 37.41, 'p_x': .5, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}},
 # {'mode': 'sec_ownrisk', 'm': 38.72, 'p_x': .55, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}},
@@ -87,8 +87,8 @@ data = [
 # {'mode': 'sec_ownrisk', 'm': 98.77, 'p_x': 1.82, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}}
 ],
 [
-{'mode': 'sec_1bl_1ch', 'm': 33.32, 'p_x': .33, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Fichas en Estado A (50%)', 'y': 'Fichas en Estado B (50%)'}},
-{'mode': 'sec_1bl_1ch', 'm': 34.2, 'p_x': .37, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Fichas en Estado A (50%)', 'y': 'Fichas en Estado B (50%)'}},
+# {'mode': 'sec_1bl_1ch', 'm': 33.32, 'p_x': .33, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Fichas en Estado A (50%)', 'y': 'Fichas en Estado B (50%)'}},
+# {'mode': 'sec_1bl_1ch', 'm': 34.2, 'p_x': .37, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Fichas en Estado A (50%)', 'y': 'Fichas en Estado B (50%)'}},
 # {'mode': 'sec_1bl_1ch', 'm': 35.16, 'p_x': .41, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}},
 # {'mode': 'sec_1bl_1ch', 'm': 36.23, 'p_x': .45, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}},
 # {'mode': 'sec_1bl_1ch', 'm': 37.41, 'p_x': .5, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}},
@@ -139,8 +139,8 @@ data = [
 # {'mode': 'sec_1bl_1ch', 'm': 98.77, 'p_x': 1.82, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}}
 ],
 [
-{'mode': 'sec_2bl_1ch', 'm': 33.32, 'p_x': .33, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Fichas en Estado A (50%)', 'y': 'Fichas en Estado B (50%)'}},
-{'mode': 'sec_2bl_1ch', 'm': 34.2, 'p_x': .37, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Fichas en Estado A (50%)', 'y': 'Fichas en Estado B (50%)'}},
+# {'mode': 'sec_2bl_1ch', 'm': 33.32, 'p_x': .33, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Fichas en Estado A (50%)', 'y': 'Fichas en Estado B (50%)'}},
+# {'mode': 'sec_2bl_1ch', 'm': 34.2, 'p_x': .37, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Fichas en Estado A (50%)', 'y': 'Fichas en Estado B (50%)'}},
 # {'mode': 'sec_2bl_1ch', 'm': 35.16, 'p_x': .41, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}},
 # {'mode': 'sec_2bl_1ch', 'm': 36.23, 'p_x': .45, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}},
 # {'mode': 'sec_2bl_1ch', 'm': 37.41, 'p_x': .5, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}},
@@ -191,8 +191,8 @@ data = [
 # {'mode': 'sec_2bl_1ch', 'm': 98.77, 'p_x': 1.82, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Estado A (50%)', 'y': 'Estado B (50%)'}}
 ],
 [
-{'mode': 'probability', 'a_x': 91, 'a_y': 5, 'b_x': 5, 'b_y': 31, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu pareja'}},
-{'mode': 'probability', 'a_x': 79, 'a_y': 5, 'b_x': 5, 'b_y': 32, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu pareja'}},
+# {'mode': 'probability', 'a_x': 91, 'a_y': 5, 'b_x': 5, 'b_y': 31, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu pareja'}},
+# {'mode': 'probability', 'a_x': 79, 'a_y': 5, 'b_x': 5, 'b_y': 32, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu pareja'}},
 # {'mode': 'probability', 'a_x': 70, 'a_y': 5, 'b_x': 5, 'b_y': 34, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu compañero'}},
 # {'mode': 'probability', 'a_x': 61, 'a_y': 5, 'b_x': 5, 'b_y': 36, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu compañero'}},
 # {'mode': 'probability', 'a_x': 55, 'a_y': 5, 'b_x': 5, 'b_y': 38, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu compañero'}},
@@ -221,9 +221,9 @@ data = [
 # {'mode': 'probability', 'a_x': 21, 'a_y': 5, 'b_x': 5, 'b_y': 85, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu compañero'}}
 ],
 [
-{'mode': 'det_giv', 'm': 33.32, 'p_x': .33, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu pareja'}},
-{'mode': 'det_giv', 'm': 34.2, 'p_x': .37, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu pareja'}},
-# {'mode': 'det_giv', 'm': 35.16, 'p_x': .41, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu compañero'}},
+# {'mode': 'det_giv', 'm': 33.32, 'p_x': .33, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu pareja'}},
+# {'mode': 'det_giv', 'm': 34.2, 'p_x': .37, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu pareja'}},
+# # {'mode': 'det_giv', 'm': 35.16, 'p_x': .41, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu compañero'}},
 # {'mode': 'det_giv', 'm': 36.23, 'p_x': .45, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu compañero'}},
 # {'mode': 'det_giv', 'm': 37.41, 'p_x': .5, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu compañero'}},
 # {'mode': 'det_giv', 'm': 38.72, 'p_x': .55, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu compañero'}},
@@ -271,7 +271,7 @@ data = [
 # {'mode': 'det_giv', 'm': 77.75, 'p_x': 1.22, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu compañero'}},
 # {'mode': 'det_giv', 'm': 87.21000000000001, 'p_x': 1.49, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu compañero'}},
 # {'mode': 'det_giv', 'm': 98.77, 'p_x': 1.82, 'p_y': 1, 'prob_a': 50, 'label': {'x': 'Tus fichas', 'y': 'Las fichas de tu compañero'}}
-]
+{'mode': 'sec_ownrisk_fixedother', 'm': 50, 'a':100, 'b':100, 'p_x': 0.6, 'p_y': 1, 'prob_a': 50, 'fixed': {'m': 0, 'p_x': 1, 'p_y': 1, 'a': 0}, 'label': {'x': 'State A (50%)', 'y': 'State B (50%)'}}]
 ]
 
 #aleatorizar numero de tareas por bloque
@@ -327,24 +327,25 @@ def shuffle(data):
     shuffled_data = []
 
     # shuffle each block
-    session_1=[0,1,2,4,3]
-    session_2=[0,2,1,4,3]
-    session_3=[0,1,2,3,4]
-    session_4=[0,2,1,3,4]
-    session_5=[4,3,1,2,0]
-    session_6=[4,3,2,1,0]
-    session_7=[3,4,1,2,0]
-    session_8=[3,4,2,1,0]
+    session_1=[1,2,3,5,4]
+    session_2=[1,3,2,5,4]
+    session_3=[1,2,3,4,5]
+    session_4=[1,3,2,4,5]
+    session_5=[5,4,2,3,1]
+    session_6=[5,4,3,2,1]
+    session_7=[4,5,2,3,1]
+    session_8=[4,5,3,2,1]
 
     list_sessions=[session_1, session_2, session_3, session_4, session_5, session_6, session_7, session_8]
+    print('lista:',list_sessions)
     random_session= random.choice(list_sessions)
+    print('sesion:',random_session)
     sorted_data = [i for _,i in sorted(zip(random_session,data))]
-    print(random_session)
-    print(sorted_data)
+    print('sorted', sorted_data)
 
     for block in sorted_data:
         shuffled_data.append(random.sample(block, k=len(block))) ##randomiza el orden de las tareas por bloque
-
+    print('shuffled:',shuffled_data)
     return shuffled_data
 
 
