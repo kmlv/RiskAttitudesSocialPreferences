@@ -194,7 +194,7 @@ class Results(Page):
         'sec_2bl_1ch': '3',
         'sec_ownrisk': '5',
         'det_giv': '8',
-        'sec_ownrisk_fixedother': '6',
+        'sec_ownrisk_fixedother': '5',
         'sec_otherrisk_ownfixed': '7'}
 
         # variables:
@@ -252,7 +252,6 @@ class Results(Page):
         
         return {'mode': modeMap[mode], 'mode_num': modeNum[mode], 'dec_a': dec_a, 'dec_b': dec_b, 'role': role,
                     'counter': counter, 'outcome': outcome, 'payoff': payoff, 'partner_payoff': partner_payoff}
-
 
 page_sequence = [
     InitialInstructions,

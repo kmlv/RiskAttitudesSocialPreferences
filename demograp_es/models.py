@@ -57,7 +57,7 @@ class Player(BasePlayer):
 
     q_income = models.PositiveIntegerField(verbose_name=_('What is the approximate annual income of your family?'),
                                            choices=[
-                                               [1, _('less than 15,000')],
+                                               [1, _('menos de 15,000 soles')],
                                                [2, '15,000 soles - 29,999 soles'],
                                                [3, '30,000 soles - 59,999 soles'],
                                                [4, '60,000 soles - 99,999 soles'],
