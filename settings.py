@@ -182,7 +182,7 @@ SESSION_CONFIGS = [
         'num_demo_participants': 2,
         'real_world_currency_per_point': 0.25,
         'participation_fee': 8.00,
-        'app_sequence': ['initial_page','RiskAndFairness_espanol','demograp_es','final']
+        'app_sequence': ['initial_page','MobilePhones','RiskAndFairness_espanol','demograp_es','final']
     },
     {
         'name': 'demograp',
