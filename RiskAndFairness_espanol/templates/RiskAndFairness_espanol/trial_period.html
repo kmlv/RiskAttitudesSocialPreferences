@@ -390,14 +390,14 @@
                         <table class="table table-bordered table-sm small">
                             <thead>
                                 <tr>
-                                    <td width="50%" style="color: blue; text-align: center;"><b>Sus fichas</b></td>
-                                    <td width="50%" v-if="mode !== 'single'" style="color: orange; text-align: center;"><b>Fichas de su pareja</b></td>
+                                    <td width="50%" style="text-align: center; color: blue; "><b>Sus fichas</b></td>
+                                    <td width="50%" v-if="mode !== 'single'" style="text-align: center; color: orange;"><b>Fichas de tu pareja</b></td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td width="50%" v-html="selected[0].x"></td>
-                                    <td width="50%" v-html="selected[0].y"></td>
+                                    <td style = "text-align: center;" v-html="selected[0].x"></td>
+                                    <td style = "text-align: center;" v-html="selected[0].y"></td>
                                 </tr>
                             </tbody>
                         </table>
