@@ -15,7 +15,6 @@ Eli Pandolfo <epandolf@ucsc.edu>
 from .models import BasePlayer as Player
 import random
 import copy
-from turtle import xcor
 import pandas as pd
 import math
 
