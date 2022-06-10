@@ -384,11 +384,11 @@ def shuffle(data):
     session_3=[2,3,4,5,1]
     session_4=[3,2,4,5,1]
     session_5=[4,3,1,2,5]
-    #session_6=[4,3,2,1,5]
+    session_6=[4,3,2,1,5]
     session_7=[3,4,1,2,5]
     session_8=[3,4,2,1,5]
 
-    list_sessions=[session_1, session_2, session_3, session_4, session_5, session_7, session_8]
+    list_sessions=[session_1, session_2, session_3, session_4, session_5, session_6, session_7, session_8]
     random_session= random.choice(list_sessions)
     print('random_session: ',random_session)
     sorted_data = [i for _,i in sorted(zip(random_session,data))]
