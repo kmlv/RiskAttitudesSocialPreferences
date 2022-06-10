@@ -22,7 +22,6 @@ class InitialInstructions(Page):
         numberOfPeriod = config.numberOfPeriod()
         return {'participation_fee': self.session.config['participation_fee']}
 
-
 class TaskInstructions(Page):
     form_model = 'player'
     form_fields = ['time_TaskInstructions']
@@ -37,13 +36,24 @@ class TaskInstructions(Page):
         dynamic_values = self.player.participant.vars['dynamic_values']
         round_data = dynamic_values[self.round_number - 1]
         mode = round_data['mode']
+        if self.round_number > 1:
+            modes=[]
+            for k in range(0,self.round_number):
+                modes.append(self.player.participant.vars['dynamic_values'][k]['mode'])
+            modes = set(modes)
+            counter2 = len(modes)
+            print(modes)
+        else:
+            counter2 = 1
         # this will be used in the conditional display of instructions
         return {'dynamic_values': dynamic_values,
                 'mode': mode,
+                'counter2': counter2,
                 'sec0': '' if mode in ['probability', 'det_giv'] else mode.split('_')[0],
                 'sec1': '' if mode in ['probability', 'det_giv'] else mode.split('_')[1],
                 'sec2': '' if mode in ['probability', 'det_giv', 'sec_ownrisk'] else mode.split('_')[2]
                 }
+
 
         
 class ControlQuestions(Page):
@@ -92,6 +102,7 @@ class Task(Page):
         dynamic_values = self.player.participant.vars['dynamic_values']
         mode = self.player.participant.vars['dynamic_values'][self.round_number - 1]['mode']
         print('MODE MODE MODE', mode)
+        prevmode = self.player.participant.vars['dynamic_values'][self.round_number - 2]['mode']
         if self.round_number > 1:
             counter = 1
             prevmode = self.player.participant.vars['dynamic_values'][self.round_number - 2]['mode']
@@ -102,8 +113,20 @@ class Task(Page):
                 prevmode = self.player.participant.vars['dynamic_values'][self.round_number - (counter + 1)]['mode']
         else:
             counter = 1
+
+        if self.round_number > 1:
+            modes=[]
+            for k in range(0,self.round_number):
+                modes.append(self.player.participant.vars['dynamic_values'][k]['mode'])
+            modes = set(modes)
+            counter2 = len(modes)
+            print(modes)
+        else:
+            counter2 = 1
+        
         return {'dynamic_values': dynamic_values,
                 'mode': mode,
+                'counter2': counter2,
                 'counter': counter,
                 'sec1': '' if mode in ['probability', 'det_giv'] else mode.split('_')[1],
                 'sec2': '' if mode in ['probability', 'det_giv', 'sec_ownrisk'] else mode.split('_')[2]
@@ -116,6 +139,25 @@ class Task(Page):
         elif self.player.id_in_group == 1 and self.round_number == self.player.participant.vars['pr']:
             self.group.set_payoffs()
 
+class Questions(Page):
+    
+    form_model = 'player'
+    form_fields = ['q1','q2','q3']
+
+    def is_displayed(self):
+        mode = self.player.participant.vars['dynamic_values'][self.round_number - 1]['mode']
+        if mode == 'sec_ownrisk':
+            counter = 1
+            prevmode = self.player.participant.vars['dynamic_values'][self.round_number - 2]['mode']
+            while mode == prevmode:
+                counter += 1;
+                if counter == self.round_number:
+                    break
+                prevmode = self.player.participant.vars['dynamic_values'][self.round_number - (counter + 1)]['mode']
+        else:
+            counter = 1
+        return counter == 25 and mode == 'sec_ownrisk'
+        
 class ResultsWaitPage(WaitPage):
 
     def is_displayed(self):
@@ -134,6 +176,7 @@ class Results(Page):
 
     def vars_for_template(self):
 
+
         modeMap = {
         'probability': 'PR',
         'sec_1bl_1ch': 'S-1B-1C',
@@ -151,7 +194,7 @@ class Results(Page):
         'sec_2bl_1ch': '3',
         'sec_ownrisk': '5',
         'det_giv': '8',
-        'sec_ownrisk_fixedother': '6',
+        'sec_ownrisk_fixedother': '5',
         'sec_otherrisk_ownfixed': '7'}
 
         # variables:
@@ -210,12 +253,12 @@ class Results(Page):
         return {'mode': modeMap[mode], 'mode_num': modeNum[mode], 'dec_a': dec_a, 'dec_b': dec_b, 'role': role,
                     'counter': counter, 'outcome': outcome, 'payoff': payoff, 'partner_payoff': partner_payoff}
 
-
 page_sequence = [
     InitialInstructions,
     TaskInstructions,
     ControlQuestions,
     Task,
+    Questions,
     ResultsWaitPage,
     Results
 ]

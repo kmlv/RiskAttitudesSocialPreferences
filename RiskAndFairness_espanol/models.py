@@ -17,7 +17,7 @@ class Constants(BaseConstants):
     name_in_url = 'RiskAndFairness_espanol'
     players_per_group = 2
     num_rounds = config.numberOfPeriod()
-    participation_fee = c(5)
+    participation_fee = c(7)
 
     # I'm offloading the heavy lifting to JavaScript because I'm very bad at Python
     static_values = {
@@ -93,6 +93,9 @@ class Player(BasePlayer):
     cq_failed_attempts = models.IntegerField()
     cq_a1 = models.LongStringField()
     cq_a2 = models.LongStringField()
+    q1 = models.StringField(label="¿Cuánto crees que los demás participantes ganarán en promedio?")
+    q2 = models.StringField(label="Imagina que de las otras personas tomas al 10% con las mayores ganancias. ¿Cuánto crees que estos participantes ganarán en promedio?")
+    q3 = models.StringField(label="Imagina que de las otras personas tomas al 10% con las menores ganancias. ¿Cuánto crees que estos participantes ganarán en promedio?")
     time_InitialInstructions = models.LongStringField()
     time_TaskInstructions =  models.LongStringField()
     time_ControlQuestions = models.LongStringField()

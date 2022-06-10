@@ -7,46 +7,56 @@
 <div class="instructions well well-lg">
 
     <h2 class="panel-sub-heading">
-        Instrucciones - Tarea 8
+        Instrucciones - Tarea {{ counter2 }}
     </h2>
 
-    <p>
-        En esta tarea, se le dará un conjunto de posibles combinaciones de fichas para usted y su compañero.
-        Se le pedirá que elija una combinación y envíe su decisión.
+        <p>
+            En esta tarea, usted tomará decisiones que pueden afectar su propio pago y el de su pareja. 
+        </p>
+
+        <p>
+            En esta tarea, se le dará un conjunto de posibles combinaciones de fichas para usted y su pareja. 
+            <b>En cada ronda de esta tarea, sus fichas se indicarán en el eje horizontal y las de su pareja en el eje vertical.</b>
+            Se le pedirá que elija una combinación y envíe su decisión.     
+        </p>
+
+        <p>
+            La siguiente figura muestra un ejemplo. Verá un gráfico 
+            que representa las asignaciones de las fichas. Esta información también se muestra en la tabla a la derecha.
+            A lo largo de la sesión, sus fichas serán representadas en azul y las de su pareja en
+            anaranjado.
+        </p>
         
-    </p>
-
-    <p>
-        La siguiente figura muestra un ejemplo de este tipo de tarea. Verá un gráfico sobre un fondo de color
-        blanco que representa las asignaciones de las fichas. En cada ronda de esta tarea, sus fichas se 
-        indicarán en el eje horizontal y los de su compañero en el eje vertical.
-        Esta información también se muestra en la tabla a la derecha de su pantalla.
-        A lo largo de la sesión, sus fichas van a ser representadas en azul y el de su compañero en 
-        anaranjado.
-    </p>
-
-    <p>
-        Por ejemplo, el punto (3.9, 30.8) representado en el gráfico por un cuadraro rojo indica que usted
-        recibiría 3.0 fichas y su contraparte 30.8 fichas. Esto también está indicado en la etiqueta: 
-        "Tú: 3.9, Tu compañero: 30.8" al costado del cuadrado rojo y en la tabla al lado de la figura.
-    </p>
-
-    <p>
-        Al inicio de cada tarea, el cuadrado rojo aparecerá en un lugar aleatorio.
-        Para realizar una elección, arrastre el cuadrado rojo con su puntero a cualquier posición en la 
-        línea gris. Solo combinaciones a lo largo de esta línea son elecciones factibles y válidas. Puede
-        tratar de realizar todas las combinaciones que usted quiera antes de tomar una decisión. Una vez ya 
-        tenga el cuadrado rojo en la posición de su preferencia, apriete el botón de "Enviar Decisión" y 
-        continúe a la siguiente ronda. Por favor, realice sus elecciones con cuidado y atención.
         
-    </p>
+        <p>
+            Por ejemplo, el punto (3.9, 32.7) representado en el gráfico por un cuadrado rojo indica que usted
+            recibiría 3.9 fichas y su contraparte 32.7 fichas. Esto también está indicado en la etiqueta:
+            "Tú: 3.9, Tu pareja: 32.7" al costado del cuadrado rojo y en la tabla.
+        </p>
+        <br>
+        <img src="{% static 'det_giv_example.PNG' %}" width='500' class="center" />
+        <br>
+        <p>
+            Al inicio de cada tarea, el cuadrado rojo aparecerá en un lugar aleatorio.
+            Para realizar una elección, arrastre el cuadrado rojo con su puntero a cualquier posición en la
+            línea gris. Solo combinaciones a lo largo de esta línea son factibles. Puede
+            probar todas las combinaciones que usted quiera antes de tomar una decisión. 
+        </p>
 
-    <p>
-        Por favor, apriete el botón "Siguiente" para proceder
-    </p>
+        <p>
+        <b>RECUERDE:
+        <ul>
+            <li> Tome cada decisión con cuidado porque podría ser seleccionada para el pago.</li> 
 
-    <!--img src="{% static "det_giv.png" %}" width="500" align="center"/-->
+            <li> En esta tarea, el eje horizontal indica las fichas pagadas a usted, y el eje vertical indica las fichas pagadas a su pareja.</li> 
+
+            <li> En esta tarea, el cuadrado rojo muestra su decisión de fichas pagadas a usted y a su pareja.</li> 
+        </ul>
+        </b>
+        </p>
+
+        <p>
+            A continuación, se le muestra una ronda de prueba.
+        </p>
 
 </div>
-
-

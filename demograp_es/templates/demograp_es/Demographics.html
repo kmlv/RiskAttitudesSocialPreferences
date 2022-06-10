@@ -31,17 +31,9 @@
     <br/>
     {% formfield player.q_gender %}
     <br/>
-    {% formfield player.q_school_year %}
-    <br/>
     {% formfield player.q_income %}
     <br/>
-    {% formfield player.q_zipcode %}
-    <br/>
-    {% formfield player.q_country %}
-    <br/>
     {% formfield player.q_opinion %}
-    <br/>
-    {% formfield player.q_station %}
     <br/>
     {% formfield player.q_how %}
     <br/>
@@ -52,13 +44,3 @@
 
 {% endblock %}
 
-{% block content_at_bottom_of_body %}
-
-    <script type="text/javascript">
-        function sort(a, b) {
-            return (a.innerHTML > b.innerHTML) ? 1 : -1;
-        }
-        $('#id_q_country option').sort(sort).appendTo('#id_q_country');
-    </script>
-
-{% endblock %}

@@ -3,7 +3,7 @@
 
 {% block title %}
     <h1>
-        Preguntas de Control
+        Preguntas de Comprensión
     </h1>
 {% endblock %}
 
@@ -42,13 +42,13 @@
 
         var modemap = {
             'probability': {you: 70.0, partner: 10.0},
-            'sec_1bl_1ch': {you: 20.0, partner: 20.0},
+            'sec_1bl_1ch': {you: 9.5, partner: 9.5},
             'sec_1bl_2ch': {you: 20.0, partner: 10.0},
-            'sec_2bl_1ch': {you: 10.0, partner: 44.0},
+            'sec_2bl_1ch': {you: 18.6, partner: 65.0},
             'sec_ownrisk': {you_a: 30.0, you_b: 32.0},
-            'sec_ownrisk_fixedother': {you: 20.0, partner: 30.0},
+            'sec_ownrisk_fixedother': {you: 20.1, partner: 0.0},
             'sec_otherrisk_ownfixed': {you: 30.0, partner: 26.0},
-            'det_giv': {you: 50.0, partner: 25.0}
+            'det_giv': {you: 50.1, partner: 25.0}
         }
     
         assign_questions = function()
@@ -69,13 +69,13 @@
             {
                 qc.innerHTML = "Suponga que ha elegido lo que se muestra en la imagen de arriba."
                 q1.innerHTML = "¿Cuál es su pago?"
-                q2.innerHTML = "¿Cuál es el pago de su compañero?"       
+                q2.innerHTML = "¿Cuál es el pago de su pareja?"       
             }
             else
             {
                 qc.innerHTML = "Suponga que ha elegido lo que se muestra en la imagen de arriba, y el Estado A sucede."
                 q1.innerHTML = "¿Cuál es su pago?"
-                q2.innerHTML = "¿Cuál es el pago de su compañero?"
+                q2.innerHTML = "¿Cuál es el pago de su pareja?"
             }
         }
 
@@ -187,7 +187,7 @@
 
     <div>
         <h4>
-            Debe responder correctamente antes de proceder a la tarea de pago. Aproxime su respuesta a 0 decimales.
+            Debe responder correctamente antes de proceder a la tarea de pago.
         </h4>
     </div>
     <div>
@@ -220,9 +220,12 @@
         <input id="input2">
     </div>
     <hr>
+    <p>
+
+    </p>
 
     <div>
-        <button id="submit" class="btn btn-primary btn-large next-button" style="float: left;">Enviar</button>
+        <button id="submit" class="btn btn-primary btn-large next-button" style="float: left;">Comenzar rondas por dinero</button>
     </div>
 
     <!--div>

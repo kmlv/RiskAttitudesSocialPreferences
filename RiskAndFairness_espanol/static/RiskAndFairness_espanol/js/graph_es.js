@@ -85,7 +85,7 @@ var vm = new Vue({
             this.tip.a.append('tspan')
             .attr('x', this.tip.a.attr('x'))
             .attr('dx', this.equation.a.x > 50 ? '-150px': '0px')
-            .text('Estado A: ' + this.prob.a.toFixed(0) + '% posible')
+            .text('Estado A: ' + this.prob.a.toFixed(0) + '% probable')
             this.tip.a.append('tspan')
             .attr('x', this.tip.a.attr('x'))
             .attr('dy', '15px')
@@ -101,7 +101,7 @@ var vm = new Vue({
             this.tip.b.append('tspan')
             .attr('x', this.tip.b.attr('x'))
             .attr('dx', this.equation.b.x > 50 ? '-150px': '0px')
-            .text('Estado B: ' + this.prob.b.toFixed(0) + '% posible')
+            .text('Estado B: ' + this.prob.b.toFixed(0) + '% probable')
             this.tip.b.append('tspan')
             .attr('x', this.tip.b.attr('x'))
             .attr('dy', '15px')
@@ -332,6 +332,7 @@ var vm = new Vue({
             this.graph.svg.append('text')
             .attr('transform', 'translate(' + (this.dimension.width / 2) + ', ' + (this.dimension.height + this.margin.top + 15) + ')')
             .style('text-anchor', 'middle')
+            .style('font', '20px sans-serif')
             .text(this.label.x)
 
             this.graph.svg.append('g')
@@ -344,6 +345,7 @@ var vm = new Vue({
             .attr('x', 0 - (this.dimension.height / 2))
             .attr('dy', '1em')
             .style('text-anchor', 'middle')
+            .style('font', '20px sans-serif')
             .text(this.label.y)
         },
         // draw the equation with d3.js

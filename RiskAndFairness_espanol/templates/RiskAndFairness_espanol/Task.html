@@ -2,8 +2,11 @@
 {% load staticfiles otree %}
 
 {% block title %}
+
+    <h1 style="color:#BFBFBF">Tarea {{ counter2 }} - Decisión {{ counter }}</h1>
+    {% comment %}
     {% if mode == 'probability' %}
-        <h1 style="color:#BFBFBF">Tarea 1 - Decisión {{ counter }}</h1>
+        <h1 style="color:#BFBFBF">Tarea 4 - Decisión {{ counter }}</h1>
     {% elif mode == 'sec_1bl_1ch' %}
         <h1 style="color:#BFBFBF">Tarea 2 - Decisión {{ counter }}</h1>
     {% elif mode == 'sec_2bl_1ch' %}
@@ -11,14 +14,16 @@
     {% elif mode == 'sec_1bl_2ch' %}
         <h1 style="color:#BFBFBF">Tarea 4 - Decisión {{ counter }}</h1>
     {% elif mode == 'sec_ownrisk' %}
-        <h1 style="color:#BFBFBF">Tarea 5 - Decisión {{ counter }}</h1>
+        <h1 style="color:#BFBFBF">Tarea 1 - Decisión {{ counter }}</h1>
     {% elif mode == 'sec_ownrisk_fixedother' %}
         <h1 style="color:#BFBFBF">Tarea 6 - Decisión {{ counter }}</h1>
     {% elif mode == 'sec_otherrisk_ownfixed' %}
         <h1 style="color:#BFBFBF">Tarea 7 - Decisión {{ counter }}</h1>
     {% elif mode == 'det_giv' %}
-         <h1 style="color:#BFBFBF">Tarea 8 - Decisión {{ counter }}</h1>
+         <h1 style="color:#BFBFBF">Tarea 5 - Decisión {{ counter }}</h1>
     {% endif %}
+    {% endcomment %}
+
 {% endblock %}
 
 
@@ -216,7 +221,7 @@
 
     </script>
 
-    <script src="{% static 'js/graph_sp.js' %}"></script>
+    <script src="{% static 'js/graph_es.js' %}"></script>
 
 {% endblock %}
 
@@ -281,7 +286,7 @@
                                 <tr>
                                     <td width="34%" style="text-align: center;">Probabilidad del resultado:</td>
                                     <td width="33%" style="text-align: center; color: blue;"><b>Sus fichas</b></td>
-                                    <td width="33%" style="text-align: center; color: orange;"><b>Fichas de su compañero</b></td>
+                                    <td width="33%" style="text-align: center; color: orange;"><b>Fichas de tu pareja</b></td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -300,33 +305,33 @@
                     </div>
                 </div>
                 <div class="col-md-4" v-if="mode === 'single_given'">
-                    <h5>Esta es su decisión:</h5>
+                    <h5>Esta es tu decisión:</h5>
                     <div class="row col-12" style="margin-top: 50px">
                         <table class="table table-bordered table-sm mdall">
                             <thead>
                                 <tr>
-                                    <td width="50%" style="color: blue;"><b>Sus fichas</b></td>
-                                    <td width="50%" v-if="mode !== 'single'" style="color: orange;"><b>Fichas de su compañero</b></td>
+                                    <td width="50%" style="text-align: center; color: blue;"><b>Sus fichas</b></td>
+                                    <td width="50%" v-if="mode !== 'single'" style="text-align: center; color: orange;"><b>Fichas de tu pareja</b></td>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td v-html="selected[0].x"></td>
-                                    <td v-html="selected[0].y"></td>
+                                    <td style = "text-align: center;" v-html="selected[0].x"></td>
+                                    <td style = "text-align: center;" v-html="selected[0].y"></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
                 <div class="col-md-4" v-if="mode !== 'probability' && mode !== 'single_given'">
-                    <h5>Esta es su decisión:</h5>
+                    <h5>Esta es tu decisión:</h5>
                     <div class="row" style="margin-top: 50px">
                         <table class="table table-bordered table-sm mdall">
                             <thead>
                                 <tr>
                                     <td width="34%" style = "text-align: center;">Estado: Probabilidad</td>
                                     <td width="33%" style = "text-align: center; color: blue"><b>Sus fichas</b></td>
-                                    <td width="33%" style = "text-align: center; color: orange" v-if="mode !== 'single'"><b>Fichas de su compañero</b></td>
+                                    <td width="33%" style = "text-align: center; color: orange" v-if="mode !== 'single'"><b>Fichas de tu pareja</b></td>
                                 </tr>
                             </thead>
                             <tbody>

@@ -1,0 +1,24 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree %}
+
+{% block scripts %}
+    <script type="text/javascript">
+      window.onload = function () 
+      {
+        document.getElementById("arrive_time").value = (new Date()).toISOString();
+      }
+    </script>
+{% endblock %}
+
+{% block title %}
+Preguntas
+{% endblock %}
+{% block content %}
+
+    <p>En la sesión de hoy, otras personas también están realizando esta misma tarea. Suponiendo que esta tarea se selecciona para el pago, responde las siguientes preguntas:</p>
+
+    {% formfields %}
+    <br><br>
+    {% next_button %}
+
+{% endblock %}

@@ -38,7 +38,7 @@ class Player(BasePlayer):
 
     q_country = models.CharField(verbose_name=_('What country are you from?'))
 
-    q_major = models.CharField(verbose_name=_('What is your major?'))
+    q_major = models.CharField(verbose_name=_('What is your major?'), choices=['Administración','Contabilidad','Derecho','Economía','Finanzas','Ingeniería Empresarial','Ingeniería de la Información','Marketing','Negocios Internacionales'])
 
     q_age = models.PositiveIntegerField(verbose_name=_('What is your age?'),
                                         min=18,
@@ -53,16 +53,16 @@ class Player(BasePlayer):
                                         choices=range(1, 24),
                                         initial=None)
 
-    q_gender = models.CharField(verbose_name=_('What do you identify as?'))
+    q_gender = models.CharField(verbose_name=_('What do you identify as?'),choices=['Hombre','Mujer','Otro','Prefiero no indicar'])
 
     q_income = models.PositiveIntegerField(verbose_name=_('What is the approximate annual income of your family?'),
                                            choices=[
-                                               [1, _('less than $15,000')],
-                                               [2, '$15,000 - $29,999'],
-                                               [3, '$30,000 - $59,999'],
-                                               [4, '$60,000 - $99,999'],
-                                               [5, '$100,000 - $199,999'],
-                                               [6, '$200,000 or more'],
+                                               [1, _('menos de 15,000 soles')],
+                                               [2, '15,000 soles - 29,999 soles'],
+                                               [3, '30,000 soles - 59,999 soles'],
+                                               [4, '60,000 soles - 99,999 soles'],
+                                               [5, '100,000 soles - 199,999 soles'],
+                                               [6, '200,000 soles o más'],
                                                [7, _('I rather not answer this question')],
                                            ]
                                            )

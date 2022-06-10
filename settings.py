@@ -58,7 +58,7 @@ AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
+REAL_WORLD_CURRENCY_CODE = 'Soles'
 #Need to use this for Risk and Fairness
 USE_POINTS = True #False #True
 
@@ -92,17 +92,19 @@ DEMO_PAGE_INTRO_TEXT = """
 """
 
 ROOMS = [
-    {
-        'name': 'Econ_Lab',
-        'display_name': 'Econ_Lab_202',
-        'participant_label_file': '_rooms/RP.txt',
-        'use_secure_urls': True,
-    },
-    {
-        'name': 'live_demo',
-        'display_name': 'Room for live demo (no participant labels)',
-    },
+    dict(
+        name='econ101',
+        display_name='Econ 101 class',
+        participant_label_file='_rooms/econ101.txt',
+    ),
+    dict(
+        name='e2labup',
+        display_name='E2LabUP - Room para sesiones online',
+        participant_label_file='_rooms/e2labup-room.txt',
+    ),
+    dict(name='live_demo', display_name='Room for live demo (no participant labels)'),
 ]
+
 
 
 # from here on are qualifications requirements for workers
@@ -135,8 +137,8 @@ mturk_hit_settings = {
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = {
-    'real_world_currency_per_point': 2.00,
-    'participation_fee': 10.00,
+    'real_world_currency_per_point': 0.25,
+    'participation_fee': 8.00,
     'doc': "",
     'mturk_hit_settings': mturk_hit_settings,
 }
@@ -170,18 +172,17 @@ SESSION_CONFIGS = [
         'name': 'RiskAndFairness_oTree',
         'display_name': 'Risk Preferences',
         'num_demo_participants': 2,
-        'real_world_currency_per_point': 0.33,
+        'real_world_currency_per_point': 0.2,
         'participation_fee': 5.00,
         'app_sequence': ['RiskAndFairness_oTree','demograp_es']
     },
     {
-        'name': 'demograp_es',
         'name': 'RiskAndFairness_espanol',
-        'display_name': 'Risk Preferences espanol',
+        'display_name': 'Risk Preferences español',
         'num_demo_participants': 2,
-        'real_world_currency_per_point': 0.33,
-        'participation_fee': 5.00,
-        'app_sequence': ['RiskAndFairness_espanol','demograp_es']
+        'real_world_currency_per_point': 0.25,
+        'participation_fee': 8.00,
+        'app_sequence': ['MobilePhones','initial_page','RiskAndFairness_espanol','demograp_es','final']
     },
     {
         'name': 'demograp',

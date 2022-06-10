@@ -66,7 +66,7 @@ msgstr "¿Cúal es el número de estación de tu computadora? (mira el sticker b
 
 #: .\demograp_es\models.py:56
 msgid "What do you identify as?"
-msgstr "¿Cómo te identificas?"
+msgstr "¿Con qué género te identificas?"
 
 #: .\demograp_es\models.py:58
 msgid "What is the approximate annual income of your family?"
@@ -74,7 +74,7 @@ msgstr "¿Cúal es el ingreso anual aproximado de tu familia?"
 
 #: .\demograp_es\models.py:60
 msgid "less than $15,000"
-msgstr "menos de $15,000"
+msgstr "menos de 15,000 soles"
 
 #: .\demograp_es\models.py:66
 msgid "I rather not answer this question"
@@ -117,15 +117,15 @@ msgid ""
 "win whatever is behind it. Someone who knows what is behind the doors opens "
 "one of the other two, revealing a goat and asks you if you wish to change "
 "your selection, you:"
-msgstr "Asume que un cuarto está equipado con tres puertas. Detrás de dos de ella hay cabras, y detrás de la tercera hay un carro lujoso. Se te pide elegir una puerta, y ganarás lo que sea que esté detrás. Alguien que sabe que está detrás de las puertas abre una de las otras dos, revelando una cabra y te pregunta si deseas cambiar tu selección, tu: "
+msgstr "Asume que un cuarto está equipado con tres puertas. Detrás de dos de ella hay cabras, y detrás de la tercera hay un carro lujoso. Se te pide elegir una puerta, y ganarás lo que sea que esté detrás. Alguien que sabe que está detrás de las puertas abre una de las otras dos, revelando una cabra y te pregunta si deseas cambiar tu selección, tu:"
 
 #: .\demograp_es\models.py:84
 msgid "change the door."
-msgstr "cambiar de puerta"
+msgstr "Cambiar de puerta"
 
 #: .\demograp_es\models.py:84
 msgid "do not change the door."
-msgstr "no cambiar de puerta"
+msgstr "No cambiar de puerta"
 
 #: .\demograp_es\models.py:87
 msgid "How did you make your choices?"
